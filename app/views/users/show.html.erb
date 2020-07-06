@@ -1,0 +1,233 @@
+<% provide(:title, "Show user") %>
+
+
+
+<article id="gbl_main">
+	
+<header id="gbl_title" class="toppage">
+	<div id="gbl_title_container" class="clearfix">
+		<nav id="bread">
+			<ol>
+				<li><a href="/"><span>WEAR</span></a></li>
+				<li><a href="/member/">マイページ</a></li>
+				<li>コーディネート一覧</li>
+			</ol>
+		<!-- /#bread --></nav>
+
+		<div id="user_header" class="clearfix">
+			<div id="user_sub">
+				<div class="image">
+					<p class="img"><img src="//cdn.wimg.jp/content/no_image/profile/nu_200.gif" srcset="//cdn.wimg.jp/content/no_image/profile/nu_640.gif 2x" alt="ssd" width="148" height="148"></p>
+					
+				</div>
+				<div class="btn_follow">
+	<p class="btn mypage"><%= link_to "プロフィール変更", edit_user_path(@user) %></p>
+<!-- /.btn_follow --></div>
+			</div>
+			<div id="user_main">
+				<section class="intro">
+					<% flash.each do |message_type, message| %>
+        		<%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
+      		<% end %>
+					<h1 class="name"><%= @user.name %></h1>
+					<div class="meta clearfix">
+						
+						<ul class="info clearfix">
+							<li><%= @user.email %></li>
+						
+							<li>MEN</li>
+						
+						</ul>
+						
+						
+					</div>
+					
+					
+				</section>
+				<section class="profile">
+					<p class="txt" data-moretxt="プロフィールをもっと見る" data-closetxt="閉じる"></p>
+				</section>
+				<div class="favorite">
+					
+					
+					
+				</div>
+			</div>
+		</div>
+		
+
+		<div id="content_other" class="clearfix">
+			
+			
+		</div>
+
+	</div>
+
+	
+	
+		
+<div id="user_header_mini" class="stickyUi">
+	<div class="container clearfix">
+		<div class="main clearfix">
+			<div class="avatar">
+				<p><a href="/shishi10/" class="over"><img src="//cdn.wimg.jp/content/no_image/profile/nu_80.gif" alt="ssd" width="48" height="48"></a></p>
+			<!-- /.avatar --></div>
+			<div class="content">
+				<p class="name">ssd</p>
+				
+				<div class="meta clearfix">
+					
+					<ul class="info clearfix">
+					
+						<li>MEN</li>
+					
+					</ul>
+					
+				<!-- /.meta --></div>
+			<!-- /.content --></div>
+		<!-- /.main --></div>
+		<div class="sub">
+			<div class="btn_follow">
+	<p class="btn mypage"><a href="/member/edit/" class="over">プロフィール変更</a></p>
+<!-- /.btn_follow --></div>
+		<!-- /.sub --></div>
+	<!-- /.container --></div>
+<!-- /#user_header_mini --></div>
+	
+
+</header>
+
+
+
+<div id="gbl_body" class="clearfix">
+	<div id="user_menu">
+	<nav class="clearfix">
+		<div class="main">
+			<ul class="clearfix">
+				
+				
+				
+				<li class="current"><a href="/member/" rel="nofollow">0<span>コーディネート</span></a></li>
+				<li><a href="/member/favorite/">3<span>お気に入り</span></a></li>
+				<li><a href="/member/closet.html">2<span>クローゼット</span></a></li>
+				<li><a href="/member/article.html" rel="nofollow">0<span>日記</span></a></li>
+			</ul>
+		<!-- /.main --></div>
+		<div class="sub">
+			<ul class="clearfix">
+				<li><a href="/member/follower/">4<span>フォロワー</span></a></li>
+				<li><a href="/member/follow/">23<span>フォロー</span></a></li>
+			</ul>
+		<!-- /.sub --></div>
+	</nav>
+<!-- /#user_menu --></div>
+
+	<div id="content">
+		
+			
+			<div id="mypageNoData">
+				<p class="tit">コーディネートを投稿しよう</p>
+				<p class="txt">コーディネートは非公開でも投稿できます。<br>毎日のコーデ記録始めませんか？</p>
+				<p class="btn"><a href="/member/upload/coordinate/" class="over">コーディネートを投稿する</a></p>
+			<!-- /#contentNoData --></div>
+		
+
+		
+
+	<!-- /#content --></div>
+<!-- /#gbl_body --></div>
+
+</article>
+
+<footer id="gbl_footer">
+	<div class="container">
+		<div id="fInner" class="clearfix">
+			
+			<div id="fService" class="section">
+				<ul class="clearfix">
+					<li><a href="/">WEAR</a></li>
+					<li><a href="https://zozo.jp/" target="_blank">ZOZOTOWN</a></li>
+					<li><a href="https://zozo.jp/zozoshoes/" target="_blank">ZOZOSHOES</a></li>
+					<li><a href="https://zozo.jp/zozoused/" target="_blank">ZOZOUSED</a></li>
+				</ul>
+			</div>
+			
+			<div id="fContents" class="section">
+				<ul class="clearfix">
+					<li><a href="/coordinate/">コーディネート一覧</a></li>
+					<li><a href="/user/">ユーザー一覧</a></li>
+					<li><a href="/item/">アイテム一覧</a></li>
+					<li><a href="/shop/">店舗一覧</a></li>
+					
+					<li><a href="/brand/">ブランド一覧</a></li>
+					<li><a href="/category/">カテゴリー一覧</a></li>
+					
+				</ul>
+				
+				<ul class="clearfix">
+					<li><a href="/ranking/">コーディネートランキング</a></li>
+					<li><a href="/ranking/user/">ユーザーランキング</a></li>
+					<li><a href="/ranking/favorite/">フォルダランキング</a></li>
+					
+					<li><a href="/ranking/fashionnews/">ファッションまとめランキング</a></li>
+					<li><a href="/keyword/">トレンドキーワード</a></li>
+					<li><a href="https://lab.wear.jp">髪型別コーデ検索</a></li>
+					
+				</ul>
+			</div>
+			<div id="fHelp" class="section">
+				<ul class="clearfix">
+					<li><a href="/first/">はじめての方へ</a></li>
+					<li><a href="https://bo.wear.jp/business/" target="_blank">ショップオーナーの皆様へ</a></li>
+					<li><a href="/help/">ヘルプ</a></li>
+					<li><a href="https://wear.jp/contact/">お問い合わせ</a></li>
+					<li><a href="/sitemap/">サイトマップ</a></li>
+				</ul>
+			</div>
+			<div id="fMobile" class="section">
+				<ul class="clearfix">
+					<li><a href="https://itunes.apple.com/jp/app/fasshonkodineto-wear/id725208930" target="_blank">iPhoneアプリ</a></li>
+					<li><a href="https://play.google.com/store/apps/details?id=com.starttoday.android.wear&amp;referrer=utm_source%3Dwear_pc%26utm_medium%3Dgm%26utm_content%3Dlogo%26utm_campaign%3Dweb" target="_blank">Androidアプリ</a></li>
+					<li class="sns ico_twitter"><a href="https://twitter.com/wear_official" target="_blank">Twitter</a></li>
+					<li class="sns ico_facebook"><a href="https://www.facebook.com/WEARjp" target="_blank">Facebook</a></li>
+					<li class="sns ico_instagram"><a href="https://instagram.com/wear_official/" target="_blank">Instagram</a></li>
+					<li class="sns ico_pinterest"><a href="https://jp.pinterest.com/wearofficial/" target="_blank">Pinterest</a></li>
+					
+				</ul>
+			</div>
+		</div>
+		<div id="fCorporate" class="clearfix">
+			<ul class="clearfix">
+				<li><a href="https://tech.zozo.com/" target="_blank">コーポレートサイト</a></li>
+				<li><a href="https://tech.zozo.com/aboutus/" target="_blank">会社概要</a></li>
+				<li><a href="https://corp.zozo.com/ir/" target="_blank">IR情報</a></li>
+				<li><a href="https://tech.zozo.com/recruit/" target="_blank">採用情報</a></li>
+				<li><a href="/rules/">利用規約</a></li>
+				<li><a href="/privacy/">プライバシーポリシー</a></li>
+			</ul>
+
+			
+			<div id="language_switch">
+				<form name="ChangeLocale" method="post" action="">
+				<input type="hidden" name="c" value="ChangeLocale">
+					<div class="select icon_font">
+						<select name="gbl_switch_locale" onchange="this.form.submit()">
+							<option value="1" selected="">日本語</option>
+							<option value="2">English</option>
+							<option value="5">繁体中文</option>
+							<option value="6">简体中文</option>
+						</select>
+					</div>
+				</form>
+			</div>
+			
+
+		</div>
+		<div id="fCopyRight" class="icon_font">
+			<div id="copy" class="clearfix">
+				<p class="copyrigth">COPYRIGHT © ZOZO Technologies, Inc. ALL RIGHTS RESERVED.</p>
+			</div>
+			<p class="txt">サイト内の文章、画像などの著作物は株式会社ＺＯＺＯテクノロジーズに属します。複製、無断転載を禁止します。</p>
+		</div>
+	</div>
+</footer>

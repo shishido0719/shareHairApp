@@ -1,0 +1,102 @@
+<% provide(:title, "ユーザー登録") %>
+
+
+<article id="gbl_main">
+
+	<div id="gbl_ad" class="banner" data-bannerid="5234" data-screenname="/member/regist.html" data-bannertarget="pc_gbl_ad_mypage" data-campaignid="">
+		<p><a href="https://zozo.jp/yourbrandproject/?utm_source=wear&amp;utm_medium=pc&amp;utm_campaign=20200615_yourbrandproject_member_hgbl&amp;t=w&amp;kid=399999953" class="over" target="_blank" style="background:#6ac1c3;"><img src="//cdn.wimg.jp/content/banner/20200615ybpj_pc_hdr.png" srcset="//cdn.wimg.jp/content/banner/20200615ybpj_pc_hdr_2x.png 2x" alt="あなたのブランドをZOZOと一緒につくりませんか？" width="990" height="56"></a></p>
+	<!-- /#gbl_ad --></div>
+
+	<header id="gbl_title">
+		<div id="gbl_title_container" class="clearfix">
+			<nav id="bread">
+				<ol>
+					<li><a href="/"><span>WEAR</span></a></li>
+					<li>WEAR 新規会員登録</li>
+				</ol>
+			</nav>
+				<div class="title_container clearfix">
+					<h1 class="tit icon_font">WEAR 新規会員登録</h1>
+				</div>
+		</div>
+	</header>
+
+
+	<div id="gbl_body" class="clearfix">
+	
+		<div id="regist" class="clearfix">
+			<div id="wearid" class="section">
+				<h2>新規会員登録</h2>
+				<%= render 'shared/error_messages' %>
+				<%= form_for(@user) do |f| %>
+					<div class="section_container">
+						
+						<div class="input">
+							<p class=""><%= f.text_field :name ,:placeholder => "ユーザー名"%></p>
+							
+							<p class=""><%= f.text_field :email,:placeholder => "メールアドレス"%></p>
+							
+							<p class=""><%= f.text_field :password,:placeholder => "パスワード"%></p>
+							
+							<p class=""><%= f.password_field :password_confirmation,:placeholder => "確認用パスワード"%></p>
+							
+							
+							<div class="captcha clearfix">
+								<div class="captchaCnt">
+									<span class="div_captcha"><img src="https://wear.jp/captcha?1592913415580"></span>
+									<span><a href="javascript:void(0)" class="changeCaptcha icon_font over">画像を変更する</a></span>
+								</div>
+								<ul class="captchaFormCnt">
+									<li class=""><input type="text" class="captcha_text" name="captcha_text" autocomplete="off" value="" placeholder="画像の文字を入力"></li>
+									<li class="info">※大文字・小文字は区別しません。</li>
+									
+									
+								</ul>
+							</div>
+						</div>
+						<div id="confirm">
+							<div class="registAgreeCnt">
+								<p class="registAgreeInput">
+									<input type="checkbox" id="checkedConfirm">
+									<span id="jsRuleConfirmCheckbox" class="checkbox icon_font off"></span>
+									<label for="checkedConfirm"><a href="/rules/" target="_blank">利用規約</a>、<a href="/privacy/" target="_blank">プライバシーポリシー</a>に同意する</label>
+								</p>
+							</div>
+						</div>
+						<div id="submit" class="jsRuleConfirmSubmitBtnCnt off">
+								<p><%= f.submit "登録する"%></p>
+							</div>
+						<input type="hidden" name="c" value="member_regist">
+						
+							<input type="hidden" name="seckey" value="d2m0ulf9">
+						
+					<!-- /.section_container --></div>
+				<% end %>
+			<!-- /#wearid --></div>
+	
+			<div id="outside" class="section">
+				<h2>外部サイトIDで始める</h2>
+				<ul>
+					
+					<li class="zozo ol_login">
+						<p class="btn"><a href="javascript:void(0);" class="over icon_font">ZOZO IDで始める</a></p>
+						<p class="notes">お気に入りアイテムを連携できて便利です</p>
+					</li>
+					
+					<li class="facebook over"><a href="javascript:void(0);"><span class="ico_facebook"></span>
+						<span>Facebookで始める</span></a>
+					</li>
+					<li class="twitter over">
+						<a href="javascript:void(0);"><span class="ico_twitter"></span><span>Twitterで始める</span></a>
+					</li>
+					
+				</ul>
+				<form action="" name="loginFacebook"><input type="hidden" name="c" value="FacebookLogin"></form>
+				<form action="" name="loginTwitter"><input type="hidden" name="c" value="TwitterLogin"></form>
+				<form action="" name="loginWeibo"><input type="hidden" name="c" value="WeiboLogin"></form>
+			<!-- /#outside --></div>
+		<!-- /#content --></div>
+	
+	<!-- /#gbl_body --></div>
+
+</article>
