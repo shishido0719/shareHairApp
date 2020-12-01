@@ -1,0 +1,357 @@
+<% provide(:title, "新規投稿") %>
+
+<article id="gbl_main">
+
+	<header id="gbl_title">
+		<div id="gbl_title_container" class="clearfix">
+			<nav id="bread">
+      	<ol>
+      		<li><a href="/"><span>WEAR</span></a></li>
+      			<li>コーディネート投稿</li>
+      	</ol>
+      <!-- /#bread --></nav>
+      
+			<div class="title_container clearfix">
+				<h1 class="tit icon_font"><span class="ico"></span>コーディネート投稿</h1>
+			<!-- /.title_container --></div>
+		<!-- /#gbl_title_container --></div>
+	<!-- /#gbl_title --></header>
+
+<div id="gbl_body" class="clearfix">
+<div id="content">
+  <%= form_for(@micropost) do |f| %>
+	<div id="upload_container">
+
+		<section id="upload_img" class="clearfix">
+			<div class="section_sub required">
+				<h2>コーディネート画像 <span>※</span></h2>
+			<!-- /.section_sub --></div>
+			<div class="section_main clearfix">
+				<div class="sub">
+					<div class="img_box">
+						<span class="ico"></span>
+						<span class="txt">NO IMAGE</span>
+						<p class="img"><img src="" alt="" width="276" height="368"></p>
+						<p class="loading"><span>Loading...</span></p>
+					<!-- /.img_box --></div>
+				<!-- /.sub --></div>
+				<div class="main">
+					<div id="ajax_mes"></div>
+					<p class="select over"><%= f.file_field :image %></p>
+					<p class="notes">推奨サイズ：横500px × 縦667px<br>容量：10MB以内</p>
+				<!-- /.main --></div>
+				<input type="hidden" name="coordinate_imgfile" id="coordinate_imgfile" value="">
+			<!-- /.section_main --></div>
+		<!-- /#upload_img --></section>
+
+		<div id="secondary">
+		<section id="upload_item" class="clearfix">
+			<div class="section_sub required">
+				<h2>着用アイテム <span>※</span></h2>
+			<!-- /.section_sub --></div>
+			<div class="section_main clearfix">
+
+				<div id="regist_item">
+
+				<!-- /#regist_item --></div>
+
+				<div id="add_item">
+					<div id="add_btn">
+						<p class="trigger over"><span class="ico">＋</span><span class="txt">アイテムを追加</span></p>
+						<div class="detail_container">
+							<div class="detail">
+								<span class="arrow"></span>
+								<p class="close"><span class="ico"></span></p>
+								<p class="tit">アイテムを追加</p>
+								<ul>
+									<li class="closet">クローゼットの中から選択</li>
+									<li class="item_search">アイテム検索</li>
+									<li class="barcode">バーコード番号から検索</li>
+									<li class="new_item">新規アイテム登録</li>
+								</ul>
+							<!-- /.detail --></div>
+						<!-- /.detail_container --></div>
+					<!-- /#add_btn --></div>
+					<p class="notes">最大9アイテムまで追加できます （残り<span class="num">9</span>）</p>
+				<!-- /#add_item --></div>
+			<!-- /.section_main --></div>
+		<!-- /#upload_item --></section>
+
+		<section id="coordinate_detail" class="clearfix">
+			<div class="section_sub">
+				<h2>コーディネート詳細</h2>
+			<!-- /.section_sub --></div>
+			<div class="section_main clearfix">
+				<div class="list summary">
+					<h3>コーディネート紹介文</h3>
+					<div class="detail">
+						<%= f.text_area :content, placeholder: "コーディネート紹介文を入力してください" %>
+						<p class="notes">※2,000文字以内で入力してください。</p>
+					<!-- /.detail --></div>
+				<!-- /.list --></div>
+
+				<div class="list tag">
+					<h3>タグ</h3>
+					<div class="detail">
+						<div id="tag_field">
+							<ul class="clearfix">
+								
+							</ul>
+						</div>
+						<div class="tag_input clearfix">
+							<p class="input"><input type="text" name="upload_tag" id="upload_tag" maxlength="60" value="" class="ui-autocomplete-input" autocomplete="off"><span id="tag_click_cancel"></span></p>
+							<p class="btn btn_off">追加</p>
+						<!-- /.tag_input --></div>
+						<div id="upload_tag_suggest"><ul class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content" id="ui-id-1" tabindex="0" style="display: none;"></ul></div>
+						<div id="suggest_valuetagid"></div>
+						<p id="tag_max_txt">最大10個まで追加できます （残り<span class="num">10</span>）</p>
+						<p class="notes">タグを付けると検索されやすくなり、また、既に登録されているタグを付けるとさらに検索されやすくなります。<br>※ 未公開で投稿した場合は、タグ検索でも表示されません。</p>
+					<!-- /.detail --></div>
+				<!-- /.list --></div>
+
+				<div class="list sex">
+					<h3>性別 <span>※</span></h3>
+					<div class="detail">
+						<select name="upload_sex" id="upload_sex">
+							
+							<option value="0">選択してください</option>
+							
+							<option value="1" selected="">MEN</option>
+							
+							<option value="2">WOMEN</option>
+							
+							<option value="3">KIDS</option>
+							
+						</select>
+					<!-- /.detail --></div>
+				<!-- /.list --></div>
+
+				<div class="list height">
+					<h3>身長 <span>※</span></h3>
+					<div class="detail">
+						<p>
+							<select name="upload_height" id="upload_height">
+								<option value="">選択してください</option>
+								
+									<option value="50">50cm</option><option value="60">60cm</option><option value="70">70cm</option><option value="80">80cm</option><option value="90">90cm</option><option value="100">100cm</option><option value="110">110cm</option><option value="120">120cm</option><option value="121">121cm</option><option value="122">122cm</option><option value="123">123cm</option><option value="124">124cm</option><option value="125">125cm</option><option value="126">126cm</option><option value="127">127cm</option><option value="128">128cm</option><option value="129">129cm</option><option value="130">130cm</option><option value="131">131cm</option><option value="132">132cm</option><option value="133">133cm</option><option value="134">134cm</option><option value="135">135cm</option><option value="136">136cm</option><option value="137">137cm</option><option value="138">138cm</option><option value="139">139cm</option><option value="140">140cm</option><option value="141">141cm</option><option value="142">142cm</option><option value="143">143cm</option><option value="144">144cm</option><option value="145">145cm</option><option value="146">146cm</option><option value="147">147cm</option><option value="148">148cm</option><option value="149">149cm</option><option value="150">150cm</option><option value="151">151cm</option><option value="152">152cm</option><option value="153">153cm</option><option value="154">154cm</option><option value="155">155cm</option><option value="156">156cm</option><option value="157">157cm</option><option value="158">158cm</option><option value="159">159cm</option><option value="160">160cm</option><option value="161">161cm</option><option value="162">162cm</option><option value="163">163cm</option><option value="164">164cm</option><option value="165">165cm</option><option value="166">166cm</option><option value="167">167cm</option><option value="168">168cm</option><option value="169">169cm</option><option value="170">170cm</option><option value="171">171cm</option><option value="172">172cm</option><option value="173">173cm</option><option value="174">174cm</option><option value="175">175cm</option><option value="176">176cm</option><option value="177">177cm</option><option value="178">178cm</option><option value="179">179cm</option><option value="180">180cm</option><option value="181">181cm</option><option value="182">182cm</option><option value="183">183cm</option><option value="184">184cm</option><option value="185">185cm</option><option value="186">186cm</option><option value="187">187cm</option><option value="188">188cm</option><option value="189">189cm</option><option value="190">190cm</option><option value="191">191cm</option><option value="192">192cm</option><option value="193">193cm</option><option value="194">194cm</option><option value="195">195cm</option><option value="196">196cm</option><option value="197">197cm</option><option value="198">198cm</option><option value="199">199cm</option><option value="200">200cm</option><option value="210">210cm</option><option value="220">220cm</option><option value="230">230cm</option><option value="240">240cm</option><option value="250">250cm</option><option value="260">260cm</option><option value="270">270cm</option>
+								
+							</select>
+							<input type="hidden" id="U_Height" name="U_Height" value="">
+						</p>
+					<!-- /.detail --></div>
+				<!-- /.list --></div>
+
+				<div class="list age">
+					<h3>年齢</h3>
+					<div class="detail">
+						<p>
+							<select name="upload_age" id="upload_age">
+								<option value="">選択してください</option>
+								<option value="0">0</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="10">10</option>
+								<option value="11">11</option>
+								<option value="12">12</option>
+								<option value="13">13</option>
+								<option value="14">14</option>
+								<option value="15">15</option>
+								<option value="16">16</option>
+								<option value="17">17</option>
+								<option value="18">18</option>
+								<option value="19">19</option>
+								<option value="20">20</option>
+								<option value="21">21</option>
+								<option value="22">22</option>
+								<option value="23">23</option>
+								<option value="24">24</option>
+								<option value="25">25</option>
+								<option value="26">26</option>
+								<option value="27">27</option>
+								<option value="28">28</option>
+								<option value="29">29</option>
+								<option value="30">30</option>
+								<option value="31">31</option>
+								<option value="32">32</option>
+								<option value="33">33</option>
+								<option value="34">34</option>
+								<option value="35">35</option>
+								<option value="36">36</option>
+								<option value="37">37</option>
+								<option value="38">38</option>
+								<option value="39">39</option>
+								<option value="40">40</option>
+								<option value="41">41</option>
+								<option value="42">42</option>
+								<option value="43">43</option>
+								<option value="44">44</option>
+								<option value="45">45</option>
+								<option value="46">46</option>
+								<option value="47">47</option>
+								<option value="48">48</option>
+								<option value="49">49</option>
+								<option value="50">50</option>
+								<option value="51">51</option>
+								<option value="52">52</option>
+								<option value="53">53</option>
+								<option value="54">54</option>
+								<option value="55">55</option>
+								<option value="56">56</option>
+								<option value="57">57</option>
+								<option value="58">58</option>
+								<option value="59">59</option>
+								<option value="60">60</option>
+								<option value="61">61</option>
+								<option value="62">62</option>
+								<option value="63">63</option>
+								<option value="64">64</option>
+								<option value="65">65</option>
+								<option value="66">66</option>
+								<option value="67">67</option>
+								<option value="68">68</option>
+								<option value="69">69</option>
+								<option value="70">70</option>
+								<option value="71">71</option>
+								<option value="72">72</option>
+								<option value="73">73</option>
+								<option value="74">74</option>
+								<option value="75">75</option>
+								<option value="76">76</option>
+								<option value="77">77</option>
+								<option value="78">78</option>
+								<option value="79">79</option>
+								<option value="80">80</option>
+								<option value="80">80</option>
+								<option value="81">81</option>
+								<option value="82">82</option>
+								<option value="83">83</option>
+								<option value="84">84</option>
+								<option value="85">85</option>
+								<option value="86">86</option>
+								<option value="87">87</option>
+								<option value="88">88</option>
+								<option value="89">89</option>
+								<option value="90">90</option>
+								<option value="91">91</option>
+								<option value="92">92</option>
+								<option value="93">93</option>
+								<option value="94">94</option>
+								<option value="95">95</option>
+								<option value="96">96</option>
+								<option value="97">97</option>
+								<option value="98">98</option>
+								<option value="99">99</option>
+								<option value="100">100</option>
+							</select>
+							<input type="hidden" id="U_Age" name="U_Age" value="">
+						</p>
+					<!-- /.detail --></div>
+				<!-- /.list --></div>
+
+				<div class="list hair">
+					<h3>髪型</h3>
+					<div class="detail">
+						<select name="upload_hair" id="upload_hair">
+							
+							<option value="">選択してください</option>
+							
+							<option value="1">ロングヘアー</option>
+							
+							<option value="2">スーパーロングヘアー</option>
+							
+							<option value="3">セミロングヘアー</option>
+							
+							<option value="4">ミディアムヘアー</option>
+							
+							<option value="5">ショートヘアー</option>
+							
+							<option value="6">ベリーショートヘアー</option>
+							
+							<option value="7">ボウズ</option>
+							
+							<option value="8">アシンメトリー</option>
+							
+							<option value="9">アフロ</option>
+							
+							<option value="10">2ブロック</option>
+							
+							<option value="11">モヒカン</option>
+							
+							<option value="12">編みこみ</option>
+							
+							<option value="13">コーンロウ</option>
+							
+							<option value="14">ドレッド</option>
+							
+						</select>
+					<!-- /.detail --></div>
+				<!-- /.list --></div>
+
+				<div class="list private">
+					<h3>公開・非公開設定 <span>※</span></h3>
+					<div class="detail">
+						<p class="select">
+						<select name="upload_private" id="upload_private">
+							<option value="1">公開</option>
+							<option selected="" value="0">非公開</option>
+						</select>
+						</p>
+						
+					<!-- /.detail --></div>
+				<!-- /.list --></div>
+
+				<div class="list share" style="display: none;">
+					<h3>シェア</h3>
+					<div class="detail">
+						<ul>
+							
+							<li class="twitter id_off">
+								<p class="btn ico_twitter">Twitter</p>
+								<input type="hidden" name="twitter_post" value="0">
+							</li>
+							<li class="weibo id_off">
+								<p class="btn ico_weibo">Weibo</p>
+								<input type="hidden" name="weibo_post" value="0">
+							</li>
+							<li class="ameba id_off">
+								<p class="btn ico_ameba">Ameba</p>
+								<input type="hidden" name="ameba_post" value="0">
+							</li>
+							
+						</ul>
+						
+						<p class="notes">※シェアをするには<a href="/member/edit/id_collabo.html">基本設定</a>からID連携をしてください。</p>
+						
+					<!-- /.detail --></div>
+				<!-- /.list --></div>
+
+			<!-- /.section_main --></div>
+		<!-- /#coordinate_detail --></section>
+		<!-- /#secondary --></div>
+	<!-- /#upload_container --></div>
+	<div id="processing">
+		<ul class="clearfix">
+			
+			<!--<li class="upload"><a href="javascript:void(0);" class="over">UPLOAD</a></li>-->
+			<li class="upload"><%= f.submit "UPLOAD", class: "btn btn-primary" %></li>
+			<input type="hidden" name="c" value="SnapInsert">
+		</ul>
+	<!-- /#processing --></div>
+	<% end %>
+	
+<!-- /#content --></div>
+
+<!-- /#gbl_body --></div>
+
+<div id="overlay">
+	<p class="loading bg_black"><span>Loading...</span></p>
+	<div class="container"></div>
+<!-- /#overlay --></div>
+</article>

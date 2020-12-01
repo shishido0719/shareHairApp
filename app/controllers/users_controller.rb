@@ -5,17 +5,6 @@ class UsersController < ApplicationController
     @users = User.search(@search_params)
   end
   
-  def search_man
-    @users = User.where(sex: "1")
-    render 'index'
-  end
-  
-  def search_woman
-    @users = User.where(sex: "2")
-    render 'index'
-  end
-  
-  
   def new
     @user = User.new
   end
@@ -36,6 +25,7 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
+    @microposts = @user.microposts
   end
   
   def update

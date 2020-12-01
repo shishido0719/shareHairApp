@@ -1,233 +1,195 @@
 <% provide(:title, "Show user") %>
 
-
-
 <article id="gbl_main">
 	
-<header id="gbl_title" class="toppage">
-	<div id="gbl_title_container" class="clearfix">
-		<nav id="bread">
-			<ol>
-				<li><a href="/"><span>WEAR</span></a></li>
-				<li><a href="/member/">マイページ</a></li>
-				<li>コーディネート一覧</li>
-			</ol>
-		<!-- /#bread --></nav>
-
-		<div id="user_header" class="clearfix">
-			<div id="user_sub">
-				<div class="image">
-					<p class="img"><img src="//cdn.wimg.jp/content/no_image/profile/nu_200.gif" srcset="//cdn.wimg.jp/content/no_image/profile/nu_640.gif 2x" alt="ssd" width="148" height="148"></p>
-					
-				</div>
-				<div class="btn_follow">
-	<p class="btn mypage"><%= link_to "プロフィール変更", edit_user_path(@user) %></p>
-<!-- /.btn_follow --></div>
-			</div>
-			<div id="user_main">
-				<section class="intro">
-					<% flash.each do |message_type, message| %>
-        		<%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
-      		<% end %>
-					<h1 class="name"><%= @user.name %></h1>
-					<div class="meta clearfix">
-						
-						<ul class="info clearfix">
-							<li><%= @user.email %></li>
-						
-							<li>MEN</li>
-						
-						</ul>
-						
-						
+	<header id="gbl_title" class="toppage">
+		<div id="gbl_title_container" class="clearfix">
+			
+			<nav id="bread">
+				<ol>
+					<li><a href="/"><span>WEAR</span></a></li>
+					<li><a href="/member/">マイページ</a></li>
+					<li>コーディネート一覧</li>
+				</ol>
+			</nav>
+	
+			<div id="user_header" class="clearfix">
+				
+				<div id="user_sub">
+					<div class="image">
+						<p class="img"><img src="//cdn.wimg.jp/content/no_image/profile/nu_200.gif" srcset="//cdn.wimg.jp/content/no_image/profile/nu_640.gif 2x" alt="ssd" width="148" height="148"></p>
 					</div>
-					
-					
-				</section>
-				<section class="profile">
-					<p class="txt" data-moretxt="プロフィールをもっと見る" data-closetxt="閉じる"></p>
-				</section>
-				<div class="favorite">
-					
-					
-					
+					<div class="btn_follow">
+						<p class="btn mypage"><%= link_to "プロフィール変更", edit_user_path(@user) %></p>
+	        </div>
 				</div>
-			</div>
-		</div>
-		
-
-		<div id="content_other" class="clearfix">
-			
-			
-		</div>
-
-	</div>
-
-	
-	
-		
-<div id="user_header_mini" class="stickyUi">
-	<div class="container clearfix">
-		<div class="main clearfix">
-			<div class="avatar">
-				<p><a href="/shishi10/" class="over"><img src="//cdn.wimg.jp/content/no_image/profile/nu_80.gif" alt="ssd" width="48" height="48"></a></p>
-			<!-- /.avatar --></div>
-			<div class="content">
-				<p class="name">ssd</p>
 				
-				<div class="meta clearfix">
-					
-					<ul class="info clearfix">
-					
-						<li>MEN</li>
-					
+				<div id="user_main">
+					<section class="intro">
+						<% flash.each do |message_type, message| %>
+	        		<%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
+	      		<% end %>
+						<h1 class="name"><%= @user.name %></h1>
+						<div class="meta clearfix">
+							<ul class="info clearfix">
+								<li><%= @user.email %></li>
+								<li>MEN</li>
+							</ul>
+						</div>
+					</section>
+					<section class="profile">
+						<p class="txt" data-moretxt="プロフィールをもっと見る" data-closetxt="閉じる"></p>
+					</section>
+				<!-- /#user_main --></div>
+				
+			<!-- /#user_header --></div>
+			
+		<!-- /#gbl_title_container --></div>
+	<!-- /#gbl_title --></header>
+	
+
+	<div id="gbl_body_show" class="clearfix">
+		
+		<div id="user_menu">
+			<nav class="clearfix">
+				
+
+				<div class="main">
+					<ul class="clearfix">
+						<li class="current"><a href="/member/" rel="nofollow"><%=@microposts.count %><span>コーディネート</span></a></li>
+						<li><a href="/member/favorite/">3<span>お気に入り</span></a></li>
+						<li><a href="/member/closet.html">2<span>クローゼット</span></a></li>
+						<li><a href="/member/article.html" rel="nofollow">0<span>日記</span></a></li>
 					</ul>
-					
-				<!-- /.meta --></div>
-			<!-- /.content --></div>
-		<!-- /.main --></div>
-		<div class="sub">
-			<div class="btn_follow">
-	<p class="btn mypage"><a href="/member/edit/" class="over">プロフィール変更</a></p>
-<!-- /.btn_follow --></div>
-		<!-- /.sub --></div>
-	<!-- /.container --></div>
-<!-- /#user_header_mini --></div>
+				</div>
+				
+				
+				<div class="sub">
+					<ul class="clearfix">
+						<li><a href="/member/follower/">4<span>フォロワー</span></a></li>
+						<li><a href="/member/follow/">23<span>フォロー</span></a></li>
+					</ul>
+				</div>
+				
+			<!-- /.clearfix --></nav>
+		<!-- /#user_menu --></div>
 	
-
-</header>
-
-
-
-<div id="gbl_body" class="clearfix">
-	<div id="user_menu">
-	<nav class="clearfix">
-		<div class="main">
-			<ul class="clearfix">
-				
-				
-				
-				<li class="current"><a href="/member/" rel="nofollow">0<span>コーディネート</span></a></li>
-				<li><a href="/member/favorite/">3<span>お気に入り</span></a></li>
-				<li><a href="/member/closet.html">2<span>クローゼット</span></a></li>
-				<li><a href="/member/article.html" rel="nofollow">0<span>日記</span></a></li>
-			</ul>
-		<!-- /.main --></div>
-		<div class="sub">
-			<ul class="clearfix">
-				<li><a href="/member/follower/">4<span>フォロワー</span></a></li>
-				<li><a href="/member/follow/">23<span>フォロー</span></a></li>
-			</ul>
-		<!-- /.sub --></div>
-	</nav>
-<!-- /#user_menu --></div>
-
-	<div id="content">
-		
+		<div id="content">
+			<p class="btn"><%= link_to "新規投稿する", new_micropost_path %></p>
+			<% @microposts.each do |micropost| %>	
+			<div id="main_list">
+				<ul class="list img_after_load clearfix">
 			
-			<div id="mypageNoData">
-				<p class="tit">コーディネートを投稿しよう</p>
-				<p class="txt">コーディネートは非公開でも投稿できます。<br>毎日のコーデ記録始めませんか？</p>
-				<p class="btn"><a href="/member/upload/coordinate/" class="over">コーディネートを投稿する</a></p>
-			<!-- /#contentNoData --></div>
-		
-
-		
-
-	<!-- /#content --></div>
-<!-- /#gbl_body --></div>
+					<li class="like_mark" data-snapid="17174150">
+						<p><%= micropost.content %></p>
+						<div class="image">
+							<a class="over" href="/genji/17174150/" style="background-image: none;">
+								<p class="img"><%= link_to image_tag(micropost.image.to_s ,size: '200x200'),micropost_path(micropost)%></p>
+								<p class="show_dt icon_font"><%= micropost.updated_at %></p>
+							</a>
+						</div>
+						
+						<div class="meta clearfix">
+							<ul class="clearfix">
+								<li class="save icon_font"><div class="btn_save fn_btn" data-savetype="coordinate" data-itemimageid="" data-saveid="17210935" data-elementid="" data-screenid="1" data-objectid="">
+									<p class="btn "><a href="/member/login.html?bkurl=%2Ftakahashiai%2F" class="icon_font over"><span>55</span></a></p>
+									<input type="hidden" id="fav_coordinate" value="SSJSWYQQODMAKNNP">
+									<input type="hidden" id="fav_snap" value="SSJSWYQQ20200708215618445">
+									<input type="hidden" id="fav_item" value="">
+									<input type="hidden" id="fav_goods" value="">
+								</div></li>
+								
+								<li class="like icon_font"><div class="btn_like fn_btn" data-liketype="1" data-likeid="17210935" data-username="takahashiai" data-screenid="1" data-objectid="">
+				
+									<p class="btn "><a href="/member/login.html?bkurl=%2Ftakahashiai%2F" class="icon_font over"><span>179</span></a></p>
+									
+									<input type="hidden" id="like_coordinate" value="SSJSWYQQODMAKNNP">
+									<input type="hidden" id="like_snap" value="SSJSWYQQ20200708215618445">
+									<input type="hidden" id="like_item" value="">
+									<input type="hidden" id="like_goods" value="">
+								<!-- /.btn_like --></div></li>
+							</ul>
+						<!-- /.meta clearfix --></div>
+						
+					<!-- /.like_mark --></li>
+					<% end %>
+			
+			
+					<li class="like_mark" data-snapid="17174021">
+						
+						<div class="image">
+							<a class="over" href="/genji/17174021/" style="background-image: none;">
+								<p class="img"><img src="https://cdn.wimg.jp/coordinate/36u6j1/20200706085307430/20200706085307430_320.jpg" data-originalretina="//cdn.wimg.jp/coordinate/36u6j1/20200706085307430/20200706085307430_500.jpg" alt="げんじさんの「【WYM LIDNM】ART GRAPHIC-TEE/カットソー（WYM LIDNM｜ウィム バイ リドム）」を使ったコーディネート" height="310" width="232" style="opacity: 1;"></p>
+								<p class="show_dt icon_font">昨日</p>
+							</a>
+						</div>
+						
+						<div class="item clearfix buyitem" data-screenid="1"><div class="sub"><p class="img" style="background-image: none;"><a href="/item/48097646/" class="over af_coordinate_item" data-objectid="17174021" data-screenid="1"><img src="https://c.imgz.jp/234/53512234/53512234b_14_d_70.jpg" data-originalretina="//c.imgz.jp/234/53512234/53512234b_14_d_125.jpg" alt="WYM LIDNM（ウィム バイ リドム）の「【WYM LIDNM】ART GRAPHIC-TEE/カットソー（Tシャツ・カットソー）」" width="40" height="48" style="opacity: 1;"></a></p></div><div class="main"><p class="brand_name">WYM LIDNM</p><div class="txt_container icon_font"><p class="txt"><span class="price">¥4,400</span><span class="size partition">size:L</span></p></div></div></div>
+						
+						<div class="meta clearfix">
+							<ul class="clearfix">
+								
+								<li class="save icon_font">
+									<div class="btn_save fn_btn" data-savetype="coordinate" data-itemimageid="" data-saveid="17174021" data-elementid="" data-screenid="1" data-objectid="">
+										<p class="btn "><a href="/member/login.html?bkurl=%2Fgenji%2F" class="icon_font over"><span>140</span></a></p>
+										<input type="hidden" id="fav_coordinate" value="CNQAVOTDXEBLHJQL">
+										<input type="hidden" id="fav_snap" value="CNQAVOTD20200707161015839">
+										<input type="hidden" id="fav_item" value="">
+										<input type="hidden" id="fav_goods" value="">
+									</div>
+								</li>
+								
+								<li class="like icon_font">
+									<div class="btn_like fn_btn" data-liketype="1" data-likeid="17174021" data-username="genji" data-screenid="1" data-objectid="">
+										<p class="btn "><a href="/member/login.html?bkurl=%2Fgenji%2F" class="icon_font over"><span>370</span></a></p>
+										<input type="hidden" id="like_coordinate" value="CNQAVOTDXEBLHJQL">
+										<input type="hidden" id="like_snap" value="CNQAVOTD20200707161015839">
+										<input type="hidden" id="like_item" value="">
+										<input type="hidden" id="like_goods" value="">
+									<!-- /.btn_like --></div>
+								</li>
+								
+							<!-- /.meta --></ul>
+						<!-- /.meta --></div>
+					<!-- /.like_mark --></li>
+				<!-- /.list --></ul>
+			<!-- /#main_list --></div>
+			
+			<div id="pager_container" class="clearfix">
+				<div id="pager" class="clearfix">
+					<p class="prev"><span class="icon_font">PREV</span></p>
+					<ul class="clearfix">
+						<li><strong>1</strong></li>
+						<li><a href="/genji/?pageno=2">2</a></li>
+						<li><a href="/genji/?pageno=3">3</a></li>
+						<li><a href="/genji/?pageno=4">4</a></li>
+						<li><a href="/genji/?pageno=5">5</a></li>
+						<li class="doted">...</li>
+						<li><a href="/genji/?pageno=27">27</a></li>
+					</ul>
+					<p class="next"><a href="/genji/?pageno=2" class="icon_font">NEXT</a></p>
+				<!-- /#pager --></div>
+			<!-- /#pager_container --></div>
+			
+			<div id="related_content">
+				<div class="link_list tag">
+					<h3 class="tit">げんじがよく使用するタグからコーディネートを探す</h3>
+					<ul class="clearfix">
+						<li><a href="/coordinate/?tag_ids=2763">革靴</a></li>
+						<li><a href="/coordinate/?tag_ids=11524">黒スキニー</a></li>
+						<li><a href="/coordinate/?tag_ids=306">シンプル</a></li>
+						<li><a href="/coordinate/?tag_ids=1811">オーバーサイズ</a></li>
+						<li><a href="/coordinate/?tag_ids=340262">げんじ撮り</a></li>
+						<li><a href="/coordinate/?tag_ids=821">スラックス</a></li>
+						<li><a href="/coordinate/?tag_ids=7503">春コーデ</a></li>
+						<li><a href="/coordinate/?tag_ids=6598">スキニーデニム</a></li>
+						<li><a href="/coordinate/?tag_ids=1578">レイヤードスタイル</a></li>
+						<li><a href="/coordinate/?tag_ids=233">スニーカー</a></li>
+					</ul>
+				</div>
+			<!-- /#related_content --></div>
+			
+		<!-- /#content --></div>
+	<!-- /#gbl_body --></div>
 
 </article>
-
-<footer id="gbl_footer">
-	<div class="container">
-		<div id="fInner" class="clearfix">
-			
-			<div id="fService" class="section">
-				<ul class="clearfix">
-					<li><a href="/">WEAR</a></li>
-					<li><a href="https://zozo.jp/" target="_blank">ZOZOTOWN</a></li>
-					<li><a href="https://zozo.jp/zozoshoes/" target="_blank">ZOZOSHOES</a></li>
-					<li><a href="https://zozo.jp/zozoused/" target="_blank">ZOZOUSED</a></li>
-				</ul>
-			</div>
-			
-			<div id="fContents" class="section">
-				<ul class="clearfix">
-					<li><a href="/coordinate/">コーディネート一覧</a></li>
-					<li><a href="/user/">ユーザー一覧</a></li>
-					<li><a href="/item/">アイテム一覧</a></li>
-					<li><a href="/shop/">店舗一覧</a></li>
-					
-					<li><a href="/brand/">ブランド一覧</a></li>
-					<li><a href="/category/">カテゴリー一覧</a></li>
-					
-				</ul>
-				
-				<ul class="clearfix">
-					<li><a href="/ranking/">コーディネートランキング</a></li>
-					<li><a href="/ranking/user/">ユーザーランキング</a></li>
-					<li><a href="/ranking/favorite/">フォルダランキング</a></li>
-					
-					<li><a href="/ranking/fashionnews/">ファッションまとめランキング</a></li>
-					<li><a href="/keyword/">トレンドキーワード</a></li>
-					<li><a href="https://lab.wear.jp">髪型別コーデ検索</a></li>
-					
-				</ul>
-			</div>
-			<div id="fHelp" class="section">
-				<ul class="clearfix">
-					<li><a href="/first/">はじめての方へ</a></li>
-					<li><a href="https://bo.wear.jp/business/" target="_blank">ショップオーナーの皆様へ</a></li>
-					<li><a href="/help/">ヘルプ</a></li>
-					<li><a href="https://wear.jp/contact/">お問い合わせ</a></li>
-					<li><a href="/sitemap/">サイトマップ</a></li>
-				</ul>
-			</div>
-			<div id="fMobile" class="section">
-				<ul class="clearfix">
-					<li><a href="https://itunes.apple.com/jp/app/fasshonkodineto-wear/id725208930" target="_blank">iPhoneアプリ</a></li>
-					<li><a href="https://play.google.com/store/apps/details?id=com.starttoday.android.wear&amp;referrer=utm_source%3Dwear_pc%26utm_medium%3Dgm%26utm_content%3Dlogo%26utm_campaign%3Dweb" target="_blank">Androidアプリ</a></li>
-					<li class="sns ico_twitter"><a href="https://twitter.com/wear_official" target="_blank">Twitter</a></li>
-					<li class="sns ico_facebook"><a href="https://www.facebook.com/WEARjp" target="_blank">Facebook</a></li>
-					<li class="sns ico_instagram"><a href="https://instagram.com/wear_official/" target="_blank">Instagram</a></li>
-					<li class="sns ico_pinterest"><a href="https://jp.pinterest.com/wearofficial/" target="_blank">Pinterest</a></li>
-					
-				</ul>
-			</div>
-		</div>
-		<div id="fCorporate" class="clearfix">
-			<ul class="clearfix">
-				<li><a href="https://tech.zozo.com/" target="_blank">コーポレートサイト</a></li>
-				<li><a href="https://tech.zozo.com/aboutus/" target="_blank">会社概要</a></li>
-				<li><a href="https://corp.zozo.com/ir/" target="_blank">IR情報</a></li>
-				<li><a href="https://tech.zozo.com/recruit/" target="_blank">採用情報</a></li>
-				<li><a href="/rules/">利用規約</a></li>
-				<li><a href="/privacy/">プライバシーポリシー</a></li>
-			</ul>
-
-			
-			<div id="language_switch">
-				<form name="ChangeLocale" method="post" action="">
-				<input type="hidden" name="c" value="ChangeLocale">
-					<div class="select icon_font">
-						<select name="gbl_switch_locale" onchange="this.form.submit()">
-							<option value="1" selected="">日本語</option>
-							<option value="2">English</option>
-							<option value="5">繁体中文</option>
-							<option value="6">简体中文</option>
-						</select>
-					</div>
-				</form>
-			</div>
-			
-
-		</div>
-		<div id="fCopyRight" class="icon_font">
-			<div id="copy" class="clearfix">
-				<p class="copyrigth">COPYRIGHT © ZOZO Technologies, Inc. ALL RIGHTS RESERVED.</p>
-			</div>
-			<p class="txt">サイト内の文章、画像などの著作物は株式会社ＺＯＺＯテクノロジーズに属します。複製、無断転載を禁止します。</p>
-		</div>
-	</div>
-</footer>

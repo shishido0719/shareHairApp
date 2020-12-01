@@ -15,23 +15,17 @@
 	<!-- /#gbl_title_container --></div>
 <!-- /#gbl_title --></header>
 	
-<div id="gbl_body" class="clearfix">
+<div id="gbl_body_user_edit" class="clearfix">
 	<div id="content">
 		<article id="content_container" class="clearfix">
-					<nav id="sub_nav">
+			<nav id="sub_nav">
 				<ul>
-					
 						<li class="nav_index"><a href="./" class="clearfix icon_font"><span class="txt">プロフィールの変更</span></a></li>
 						<li class="nav_profile_img"><a href="profile_img.html" class="clearfix icon_font"><span class="txt">プロフィール画像の変更</span></a></li>
 						<li class="nav_id_collabo"><a href="id_collabo.html" class="clearfix icon_font"><span class="txt">ID連携</span></a></li>
-						
-							<li class="nav_password_regist"><a href="password_regist.html" class="clearfix icon_font"><span class="txt">パスワードの登録</span></a></li>
-							<li class="nav_mail_address"><a href="mail_address.html" class="clearfix icon_font"><span class="txt">メールアドレスの変更</span></a></li>
-							<li class="nav_mail_magazine"><a href="mail_magazine.html" class="clearfix icon_font"><span class="txt">メールマガジン設定</span></a></li>
-						
-						<li class="nav_comment"><a href="comment.html" class="clearfix icon_font"><span class="txt">コメント設定</span></a></li>
+						<li class="nav_password_regist"><a href="password_regist.html" class="clearfix icon_font"><span class="txt">パスワードの登録</span></a></li>
+						<li class="nav_mail_magazine"><a href="mail_magazine.html" class="clearfix icon_font"><span class="txt">メールマガジン設定</span></a></li>
 						<li class="nav_leave"><a href="leave.html" class="clearfix icon_font"><span class="txt">退会について</span></a></li>
-					
 				</ul>
 			<!-- /#sub_nav --></nav>
 			<section id="main">
@@ -39,8 +33,7 @@
 				<div id="main_container">
 					
 					<%= render 'shared/error_messages' %>
-					
-					<h3>プロフィール情報の変更ができます。</h3>
+
 					<% flash.each do |message_type, message| %>
 		        <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
 		      <% end %>
@@ -49,7 +42,7 @@
 						<ul>
 							<li class="clearfix">
 								<div class="sub">
-									<p>WEAR ID</p>
+									<p>ID</p>
 								</div>
 								<div class="main">
 									<p class="txt"><%= @user.name %></p>

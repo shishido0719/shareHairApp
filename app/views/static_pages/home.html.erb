@@ -1,18 +1,17 @@
 <% provide(:title, "Home") %>
 
 <article id='gbl_main'>
-	<div id="switch_sex_type">
+	<div id="switch_sex_type_home">
 		<nav>
 			<ul>
-				<li class="all current"><a href="?c=SwitchTabType">ALL</a></li>
-				<li class="men "><a href="?c=SwitchTabType&amp;sex_id=1">MEN</a></li>
-				<li class="women "><a href="?c=SwitchTabType&amp;sex_id=2">WOMEN</a></li>
-				<li class="kids "><a href="?c=SwitchTabType&amp;sex_id=3">KIDS</a></li>
+				<li class="all current"><%= link_to "ALL", 'https://2a96874cd91d416185a404831e411f71.vfs.cloud9.us-east-2.amazonaws.com/users' %></li>
+				<li class="men "><%= link_to "MAN", 'https://2a96874cd91d416185a404831e411f71.vfs.cloud9.us-east-2.amazonaws.com/users?utf8=%E2%9C%93&commit=%E6%A4%9C%E7%B4%A2&search%5Bsex%5D=1&search%5Bname%5D=' %></li>
+				<li class="women "><%= link_to "WOMAN", 'https://2a96874cd91d416185a404831e411f71.vfs.cloud9.us-east-2.amazonaws.com/users?utf8=%E2%9C%93&commit=%E6%A4%9C%E7%B4%A2&search%5Bsex%5D=2&search%5Bname%5D=' %></li>
 			</ul>
 		</nav>
 	</div>
 	
-	<div id="gbl_body" class="clearfix">
+	<div id="gbl_body_home" class="clearfix">
 	
 		<nav id="switch_menu">
 			<ul>
@@ -24,315 +23,117 @@
 		<div id="content_container" class="clearfix">
 			
 			<div id="content">
-	
-	
 				<section class="pickupTagList clearfix">
 					<h2 class="title">#おうちファッション</h2>
-					<ul class="img_after_load clearfix">
-				
-						<li>
-							<div class="image_container">
-								<p class="img"><a href="/3211dai/16814586/" class="over"><img src="/common/img/blank.gif" data-original="//cdn.wimg.jp/coordinate/lczmdd/20200512195516295/20200512195516295_276.jpg" data-originalretina="//cdn.wimg.jp/coordinate/lczmdd/20200512195516295/20200512195516295_500.jpg" alt="Nsさんのコーディネート" width="379" height="506"></a></p>
-								
-								<div class="item bottom" data-offsetx="0.0400" data-offsety="0.9080" style="left: -1.17188px; top: 233.812px;">
-									<div class="container clearfix">
-										<p class="img"><a href="/item/21306830/" class="over af_coordinate_item" data-objectid="16814586" data-screenid="12"><img src="/common/img/blank.gif" data-original="//c.imgz.jp/777/20427777/20427777b_8_D_70.jpg" data-originalretina="//c.imgz.jp/777/20427777/20427777b_8_D_125.jpg" alt="" width="40" height="48"></a></p>
-										<div class="cnt">
-											<div class="cnt_container">
-												<p class="brand">BEAMS JAPAN</p>
-												<p class="price">¥4,180</p>
+						<ul class="img_after_load clearfix">
+					
+							<% @microposts.each do |micropost| %>
+							<li>
+								<p><%= micropost.content %></p>
+								<div class="image_container">
+									<div class="item bottom" data-offsetx="0.0400" data-offsety="0.9080" style="left: -1.17188px; top: 233.812px;">
+										<div class="container clearfix">
+			                <p class="img"><%= link_to image_tag(micropost.image.to_s ,size: '200x200'),micropost_path(micropost)%></p>
+											<div class="cnt">
+												<div class="cnt_container">
+													<p class="brand">BEAMS JAPAN</p>
+													<p class="price">¥4,180</p>
+												</div>
 											</div>
+											<div class="bug"><a href="/item/21306830/" class="af_coordinate_item icon_font" data-objectid="16814586" data-screenid="12"></a></div>
+										<!-- /.container --></div>
+									<!-- /.item --></div>
+									<p class="useitem_tagshowbtn"><a href="javascript:void(0);"><span class="ico_tag"></span></a></p>
+								<!-- /.image_container --></div>
+								
+								<div class="profile clearfix">
+									
+									<div class="content clearfix">
+										<div class="main">
+											<p class="name clearfix"><span class="namefirst">Ns</span></p>
+											<p class="txt">166cm</p>
 										</div>
-										<div class="bug"><a href="/item/21306830/" class="af_coordinate_item icon_font" data-objectid="16814586" data-screenid="12"></a></div>
-									</div>
-								</div>
-								<p class="useitem_tagshowbtn"><a href="javascript:void(0);"><span class="ico_tag"></span></a></p>
-								
-							</div>
-							<div class="profile clearfix">
-								<div class="content clearfix">
-									<div class="sub">
-										<p class="img"><a href="/3211dai/" class="over"><img src="/common/img/blank.gif" data-original="//cdn.wimg.jp/profile/lczmdd/20190405173054331_32.jpg" data-originalretina="//cdn.wimg.jp/profile/lczmdd/20190405173054331_80.jpg" alt="Nsさん" width="32" height="32"></a></p>
-									</div>
-									<div class="main">
-										<p class="name clearfix"><span class="namefirst">Ns</span></p>
-										<p class="txt">166cm</p>
-									</div>
-								</div>
-								<div class="btn_block">
-									<div class="btn_follow">
-		
-			
-				
-				<p class="btn" data-memberid="6906129" data-username="" data-changetxt="フォロー中"><a href="/member/login.html?bkurl=%2F%3F" class="icon_font over"><span class="txt">フォローする</span></a></p>
-			
-		
-		<input type="hidden" id="follow_user" value="EMFWDTKXVFLYKZJQ">
-		<input type="hidden" id="follow_account" value="EMFWDTKX20200614204205085">
-	<!-- /.btn_follow --></div>
-								</div>
-							</div>
-						</li>
-				
-						<li>
-							<div class="image_container">
-								<p class="img"><a href="/khyta3/16804814/" class="over"><img src="/common/img/blank.gif" data-original="//cdn.wimg.jp/coordinate/alveww/20200511120004223/20200511120004223_276.jpg" data-originalretina="//cdn.wimg.jp/coordinate/alveww/20200511120004223/20200511120004223_500.jpg" alt="かざまくんさんのコーディネート" width="379" height="506"></a></p>
-								
-								<div class="item right" data-offsetx="0.6470" data-offsety="0.6150" style="left: auto; right: 75.8281px; top: 61.5%;">
-									<div class="container clearfix">
-										<p class="img"><a href="/item/41140816/" class="over af_coordinate_item" data-objectid="16804814" data-screenid="12"><img src="/common/img/blank.gif" data-original="//cdn.wimg.jp/item/41140816/6b194706604a7/20190725020527567_70.jpg" data-originalretina="//cdn.wimg.jp/item/41140816/6b194706604a7/20190725020527567_125.jpg" alt="" width="40" height="48"></a></p>
-										<div class="cnt">
-											<div class="cnt_container">
-												<p class="brand">ユニクロ</p>
-												<p class="price">¥4,389</p>
-											</div>
-										</div>
-										<div class="bug"><a href="/item/41140816/" class="af_coordinate_item icon_font" data-objectid="16804814" data-screenid="12"></a></div>
-									</div>
-								</div>
-								<p class="useitem_tagshowbtn"><a href="javascript:void(0);"><span class="ico_tag"></span></a></p>
-								
-							</div>
-							<div class="profile clearfix">
-								<div class="content clearfix">
-									<div class="sub">
-										<p class="img"><a href="/khyta3/" class="over"><img src="/common/img/blank.gif" data-original="//cdn.wimg.jp/profile/alveww/20180711220852224_32.jpg" data-originalretina="//cdn.wimg.jp/profile/alveww/20180711220852224_80.jpg" alt="かざまくんさん" width="32" height="32"></a></p>
-									</div>
-									<div class="main">
-										<p class="name clearfix"><span class="namefirst">かざまくん</span></p>
-										<p class="txt">176cm</p>
-									</div>
-								</div>
-								<div class="btn_block">
-									<div class="btn_follow">
-		
-			
-				
-				<p class="btn" data-memberid="10969189" data-username="" data-changetxt="フォロー中"><a href="/member/login.html?bkurl=%2F%3F" class="icon_font over"><span class="txt">フォローする</span></a></p>
-			
-		
-		<input type="hidden" id="follow_user" value="EMFWDTKXVFLYKZJQ">
-		<input type="hidden" id="follow_account" value="EMFWDTKX20200614204205085">
-	<!-- /.btn_follow --></div>
-								</div>
-							</div>
-						</li>
-				
-						<li>
-							<div class="image_container">
-								<p class="img"><a href="/yotsugen/16865004/" class="over"><img src="/common/img/blank.gif" data-original="//cdn.wimg.jp/coordinate/ceqq1d/20200519082456279/20200519082456279_276.jpg" data-originalretina="//cdn.wimg.jp/coordinate/ceqq1d/20200519082456279/20200519082456279_500.jpg" alt="LAKOLE　大阪ルクアイーレ店｜よつさんのコーディネート" width="379" height="506"></a></p>
-								
-								<div class="item right" data-offsetx="0.5870" data-offsety="0.5450" style="left: auto; right: 90.5938px; top: 54.5%;">
-									<div class="container clearfix" style="right: -6.59375px;">
-										<p class="img"><a href="/item/47279411/" class="over af_coordinate_item" data-objectid="16865004" data-screenid="12"><img src="/common/img/blank.gif" data-original="//c.imgz.jp/053/53555053/53555053b_14_d_70.jpg" data-originalretina="//c.imgz.jp/053/53555053/53555053b_14_d_125.jpg" alt="" width="40" height="48"></a></p>
-										<div class="cnt">
-											<div class="cnt_container">
-												<p class="brand">LAKOLE</p>
-												<p class="price">¥3,520</p>
-											</div>
-										</div>
-										<div class="bug"><a href="/item/47279411/" class="af_coordinate_item icon_font" data-objectid="16865004" data-screenid="12"></a></div>
-									</div>
-								</div>
-								<p class="useitem_tagshowbtn"><a href="javascript:void(0);"><span class="ico_tag"></span></a></p>
-								
-							</div>
-							<div class="profile clearfix">
-								<div class="content clearfix">
-									<div class="sub">
-										<p class="img"><a href="/yotsugen/" class="over"><img src="/common/img/blank.gif" data-original="//cdn.wimg.jp/profile/ceqq1d/20200509183911114_32.jpg" data-originalretina="//cdn.wimg.jp/profile/ceqq1d/20200509183911114_80.jpg" alt="LAKOLE　大阪ルクアイーレ店｜よつさん" width="32" height="32"></a></p>
-									</div>
-									<div class="main">
-										<p class="name clearfix type_on"><span class="namefirst">よつ</span><span class="icon_font user_type_ico small shopstaff"></span></p>
-										<p class="txt">165cm</p>
-									</div>
-								</div>
-								<div class="btn_block">
-									<div class="btn_follow">
-		
-			
-				
-				<p class="btn" data-memberid="9401468" data-username="" data-changetxt="フォロー中"><a href="/member/login.html?bkurl=%2F%3F" class="icon_font over"><span class="txt">フォローする</span></a></p>
-			
-		
-		<input type="hidden" id="follow_user" value="EMFWDTKXVFLYKZJQ">
-		<input type="hidden" id="follow_account" value="EMFWDTKX20200614204205085">
-	<!-- /.btn_follow --></div>
-								</div>
-							</div>
-						</li>
-				
-					</ul>
+									<!-- /.content --></div>
+									
+									<div class="btn_block">
+										<div class="btn_follow">
+											<p class="btn" data-memberid="6906129" data-username="" data-changetxt="フォロー中"><a href="/member/login.html?bkurl=%2F%3F" class="icon_font over"><span class="txt">フォローする</span></a></p>
+											<input type="hidden" id="follow_user" value="EMFWDTKXVFLYKZJQ">
+											<input type="hidden" id="follow_account" value="EMFWDTKX20200614204205085">
+										<!-- /.btn_follow --></div>
+									<!-- /.btn_block --></div>
+									
+								<!-- /.profile --></div>
+							</li>
+							<% end %>
+	
+						</ul>
 					<p class="btn_more"><a href="/coordinate/?tag_ids=739969" class="over">もっと見る</a></p>
+				<!-- /.pickupTagList --></section>
+				
+			
+				<section id="ranking" class="ranking clearfix">
+					<div class="title_container clearfix">
+						<h2 class="title">ランキング</h2>
+						<p class="update">UPDATE 20:00</p>
+					</div>
+					
+					<ol class="clearfix">
+						<li>
+							<p class="rank">1</p>
+							<div class="image_container">
+								<p class="img"><a href="/fwafwa7/17056206/" class="over"><img src="//cdn.wimg.jp/coordinate/z7v8tq/20200614173534469/20200614173534469_320.jpg" srcset="//cdn.wimg.jp/coordinate/z7v8tq/20200614173534469/20200614173534469_500.jpg" alt="きりまるさんの「リブボートネックT（5分袖）（UNIQLO｜ユニクロ）」を使ったコーディネート" width="246" height="328"></a></p>
+								<div class="item right" data-offsetx="0.6150" data-offsety="0.2830" style="left: auto; right: 83.7031px; top: 28.3%;">
+									<div class="container clearfix">
+										<p class="img"><a href="/item/40575723/" class="over af_coordinate_item" data-objectid="17056206" data-screenid="12"><img src="//cdn.wimg.jp/item/40575723/908d90a474ae9/20190702020116767_70.jpg" srcset="//cdn.wimg.jp/item/40575723/908d90a474ae9/20190702020116767_125.jpg" alt="ユニクロの「リブボートネックT（5分袖）（Tシャツ・カットソー）」" width="40" height="48"></a></p>
+										<div class="cnt">
+											<div class="cnt_container">
+											<p class="brand">ユニクロ</p>
+											<p class="price">¥1,100</p>
+											</div>
+										</div>
+										<div class="bug"><a href="/item/40575723/" class="af_coordinate_item icon_font" data-objectid="17056206" data-screenid="12"></a></div>
+									<!-- /.container --></div>
+								<!-- /.item --></div>
+								<p class="useitem_tagshowbtn"><a href="javascript:void(0);"><span class="ico_tag"></span></a></p>
+							<!-- /.image_container --></div>
+							
+							<div class="profile clearfix">
+								<div class="content clearfix">
+									<div class="sub">
+										<p class="img"><a href="/fwafwa7/" class="over"><img src="//cdn.wimg.jp/profile/z7v8tq/20200513014207507_32.jpg" srcset="//cdn.wimg.jp/profile/z7v8tq/20200513014207507_80.jpg" alt="きりまるさん" width="32" height="32"></a></p>
+									</div>
+									<div class="main">
+										<p class="name clearfix"><span class="namefirst">きりまる</span></p>
+										<p class="txt">154cm</p>
+									</div>
+								</div>
+								<div class="btn_block">
+									<div class="btn_follow">
+										<p class="btn" data-memberid="5690494" data-username="fwafwa7" data-changetxt="フォロー中"><a href="/member/login.html?bkurl=%2F%3F" class="icon_font over"><span class="txt">フォローする</span></a></p>
+										<input type="hidden" id="follow_user" value="EMFWDTKXVFLYKZJQ">
+										<input type="hidden" id="follow_account" value="EMFWDTKX20200614204205085">
+									<!-- /.btn_follow --></div>
+								<!-- /.btn_block --></div>
+							<!-- /.profile --></div>
+						</li>
+					</ol>
+					<p class="btn_more"><a href="/ranking/" class="over">もっと見る</a></p>
+				<!-- /.ranking --></section>
+				
+			<!-- /.content --></div>
+		
+			<div id="sidebar">
+				
+				<section id="search">
+					<h2 class="title">探す</h2>
+					<ul>
+						<li class="coordinate icon_font clearfix"><%= link_to "ヘアスタイルを探す", microposts_path %></li>
+						<li class="user icon_font clearfix"><%= link_to "ユーザーを探す", users_path %></li>
+						<li class="item icon_font clearfix"><a href="/item/">アイテムを探す</a></li>
+						<li class="shop icon_font clearfix"><a href="/shop/">ヘアサロンを探す</a></li>
+					</ul>
 				</section>
-				
-			
-	
-			
-			<section id="ranking" class="ranking clearfix">
-				<div class="title_container clearfix">
-					<h2 class="title">ランキング</h2>
-					<p class="update">UPDATE 20:00</p>
-				</div>
-				<ol class="clearfix">
-			
-					<li>
-						<p class="rank">1</p>
-						<div class="image_container">
-							<p class="img"><a href="/fwafwa7/17056206/" class="over"><img src="//cdn.wimg.jp/coordinate/z7v8tq/20200614173534469/20200614173534469_320.jpg" srcset="//cdn.wimg.jp/coordinate/z7v8tq/20200614173534469/20200614173534469_500.jpg" alt="きりまるさんの「リブボートネックT（5分袖）（UNIQLO｜ユニクロ）」を使ったコーディネート" width="246" height="328"></a></p>
-							
-							<div class="item right" data-offsetx="0.6150" data-offsety="0.2830" style="left: auto; right: 83.7031px; top: 28.3%;">
-								<div class="container clearfix">
-									<p class="img"><a href="/item/40575723/" class="over af_coordinate_item" data-objectid="17056206" data-screenid="12"><img src="//cdn.wimg.jp/item/40575723/908d90a474ae9/20190702020116767_70.jpg" srcset="//cdn.wimg.jp/item/40575723/908d90a474ae9/20190702020116767_125.jpg" alt="ユニクロの「リブボートネックT（5分袖）（Tシャツ・カットソー）」" width="40" height="48"></a></p>
-									<div class="cnt">
-										<div class="cnt_container">
-										<p class="brand">ユニクロ</p>
-										<p class="price">¥1,100</p>
-										</div>
-									</div>
-									<div class="bug"><a href="/item/40575723/" class="af_coordinate_item icon_font" data-objectid="17056206" data-screenid="12"></a></div>
-								</div>
-							</div>
-							<p class="useitem_tagshowbtn"><a href="javascript:void(0);"><span class="ico_tag"></span></a></p>
-							
-						</div>
-						<div class="profile clearfix">
-							<div class="content clearfix">
-								<div class="sub">
-									<p class="img"><a href="/fwafwa7/" class="over"><img src="//cdn.wimg.jp/profile/z7v8tq/20200513014207507_32.jpg" srcset="//cdn.wimg.jp/profile/z7v8tq/20200513014207507_80.jpg" alt="きりまるさん" width="32" height="32"></a></p>
-								</div>
-								<div class="main">
-									<p class="name clearfix"><span class="namefirst">きりまる</span></p>
-									<p class="txt">154cm</p>
-								</div>
-							</div>
-							<div class="btn_block">
-								<div class="btn_follow">
-		
-			
-				
-				<p class="btn" data-memberid="5690494" data-username="fwafwa7" data-changetxt="フォロー中"><a href="/member/login.html?bkurl=%2F%3F" class="icon_font over"><span class="txt">フォローする</span></a></p>
-			
-		
-		<input type="hidden" id="follow_user" value="EMFWDTKXVFLYKZJQ">
-		<input type="hidden" id="follow_account" value="EMFWDTKX20200614204205085">
-	<!-- /.btn_follow --></div>
-							</div>
-						</div>
-					</li>
-			
-					<li>
-						<p class="rank">2</p>
-						<div class="image_container">
-							<p class="img"><a href="/unitarosu9876/17055826/" class="over"><img src="//cdn.wimg.jp/coordinate/oi1jlz/20200614164934521/20200614164934521_320.jpg" srcset="//cdn.wimg.jp/coordinate/oi1jlz/20200614164934521/20200614164934521_500.jpg" alt="えだ( ¨̮ )さんの「サークルハンドルかごバッグ（GRL｜グレイル）」を使ったコーディネート" width="246" height="328"></a></p>
-							
-							<div class="item right" data-offsetx="0.6290" data-offsety="0.6540" style="left: auto; right: 80.2656px; top: 65.4%;">
-								<div class="container clearfix">
-									<p class="img"><a href="/item/39974345/" class="over af_coordinate_item" data-objectid="17055826" data-screenid="12"><img src="//cdn.wimg.jp/item/39974345/20190603180028029/20190603180028029_70.jpg" srcset="//cdn.wimg.jp/item/39974345/20190603180028029/20190603180028029_125.jpg" alt="GRLの「サークルハンドルかごバッグ（かごバッグ）」" width="40" height="48"></a></p>
-									<div class="cnt">
-										<div class="cnt_container">
-										<p class="brand">GRL</p>
-										<p class="price">¥1,833</p>
-										</div>
-									</div>
-									<div class="bug"><a href="/item/39974345/" class="af_coordinate_item icon_font" data-objectid="17055826" data-screenid="12"></a></div>
-								</div>
-							</div>
-							<p class="useitem_tagshowbtn"><a href="javascript:void(0);"><span class="ico_tag"></span></a></p>
-							
-						</div>
-						<div class="profile clearfix">
-							<div class="content clearfix">
-								<div class="sub">
-									<p class="img"><a href="/unitarosu9876/" class="over"><img src="//cdn.wimg.jp/profile/oi1jlz/20190929165415479_32.jpg" srcset="//cdn.wimg.jp/profile/oi1jlz/20190929165415479_80.jpg" alt="えだ( ¨̮ )さん" width="32" height="32"></a></p>
-								</div>
-								<div class="main">
-									<p class="name clearfix type_on"><span class="namefirst">えだ( ¨̮ )</span><span class="icon_font user_type_ico small wearista"></span></p>
-									<p class="txt">155cm</p>
-								</div>
-							</div>
-							<div class="btn_block">
-								<div class="btn_follow">
-		
-			
-				
-				<p class="btn" data-memberid="4217893" data-username="unitarosu9876" data-changetxt="フォロー中"><a href="/member/login.html?bkurl=%2F%3F" class="icon_font over"><span class="txt">フォローする</span></a></p>
-			
-		
-		<input type="hidden" id="follow_user" value="EMFWDTKXVFLYKZJQ">
-		<input type="hidden" id="follow_account" value="EMFWDTKX20200614204205085">
-	<!-- /.btn_follow --></div>
-							</div>
-						</div>
-					</li>
-			
-					<li>
-						<p class="rank">3</p>
-						<div class="image_container">
-							<p class="img"><a href="/aaxxxy2/17053501/" class="over"><img src="//cdn.wimg.jp/coordinate/sirkp0/20200614150454707/20200614150454707_320.jpg" srcset="//cdn.wimg.jp/coordinate/sirkp0/20200614150454707/20200614150454707_500.jpg" alt="ユウさんの「FILA Disruptor SD TOKYO (BK/NV/RD)（FILA｜フィラ）」を使ったコーディネート" width="246" height="328"></a></p>
-							
-							<div class="item right bottom" data-offsetx="0.7290" data-offsety="0.9410" style="left: auto; right: 55.6562px; top: 244.641px;">
-								<div class="container clearfix">
-									<p class="img"><a href="/item/47312805/" class="over af_coordinate_item" data-objectid="17053501" data-screenid="12"><img src="//c.imgz.jp/209/53582209/53582209_8_d_70.jpg" srcset="//c.imgz.jp/209/53582209/53582209_8_d_125.jpg" alt="FILAの「FILA Disruptor SD TOKYO (BK/NV/RD)（サンダル）」" width="40" height="48"></a></p>
-									<div class="cnt">
-										<div class="cnt_container">
-										<p class="brand">FILA</p>
-										<p class="price">¥8,140</p>
-										</div>
-									</div>
-									<div class="bug"><a href="/item/47312805/" class="af_coordinate_item icon_font" data-objectid="17053501" data-screenid="12"></a></div>
-								</div>
-							</div>
-							<p class="useitem_tagshowbtn"><a href="javascript:void(0);"><span class="ico_tag"></span></a></p>
-							
-						</div>
-						<div class="profile clearfix">
-							<div class="content clearfix">
-								<div class="sub">
-									<p class="img"><a href="/aaxxxy2/" class="over"><img src="//cdn.wimg.jp/profile/sirkp0/20200504204526890_32.jpg" srcset="//cdn.wimg.jp/profile/sirkp0/20200504204526890_80.jpg" alt="ユウさん" width="32" height="32"></a></p>
-								</div>
-								<div class="main">
-									<p class="name clearfix"><span class="namefirst">ユウ</span></p>
-									<p class="txt">182cm</p>
-								</div>
-							</div>
-							<div class="btn_block">
-								<div class="btn_follow">
-		
-			
-				
-				<p class="btn" data-memberid="9589405" data-username="aaxxxy2" data-changetxt="フォロー中"><a href="/member/login.html?bkurl=%2F%3F" class="icon_font over"><span class="txt">フォローする</span></a></p>
-			
-		
-		<input type="hidden" id="follow_user" value="EMFWDTKXVFLYKZJQ">
-		<input type="hidden" id="follow_account" value="EMFWDTKX20200614204205085">
-	<!-- /.btn_follow --></div>
-							</div>
-						</div>
-					</li>
-			
-				</ol>
-				<p class="btn_more"><a href="/ranking/" class="over">もっと見る</a></p>
-			</section>
-			
-	
-			
-			
-			
-		</div>
-	
-		<div id="sidebar">
-			
-			<section id="search">
-				<h2 class="title">探す</h2>
-				<ul>
-					<li class="coordinate icon_font clearfix"><a href="/coordinate/">コーディネートを探す</a></li>
-					<li class="user icon_font clearfix"><%= link_to "ユーザーを探す", users_path %></li>
-					<li class="item icon_font clearfix"><a href="/item/">アイテムを探す</a></li>
-					<li class="shop icon_font clearfix"><a href="/shop/">ショップを探す</a></li>
-					<li class="brand icon_font clearfix"><a href="/brand/">ブランドを探す</a></li>
-				</ul>
-			</section>
 	
 			
 			<section id="user">
@@ -381,26 +182,6 @@
 			
 					<li class="clearfix">
 						<div class="sub">
-							<p class="img"><a href="/orangekun00/" class="over"><img src="//cdn.wimg.jp/profile/l2e6wc/20200326222021235_200.jpg" alt="ZETTOさん" width="36" height="36"></a></p>
-						</div>
-						<div class="main">
-							<p class="name clearfix type_on"><span class="namefirst">Ryu</span><span class="icon_font user_type_ico small wearista"></span></p>
-							<p class="txt icon_font">41,453</p>
-						</div>
-					</li>
-			
-					<li class="clearfix">
-						<div class="sub">
-							<p class="img"><a href="/naenano78/" class="over"><img src="//cdn.wimg.jp/profile/3yex3y/20191007215543873_200.jpg" alt="ZETTOさん" width="36" height="36"></a></p>
-						</div>
-						<div class="main">
-							<p class="name clearfix"><span class="namefirst">なえなの🌨</span></p>
-							<p class="txt icon_font">68,677</p>
-						</div>
-					</li>
-			
-					<li class="clearfix">
-						<div class="sub">
 							<p class="img"><a href="/miyoshi0511/" class="over"><img src="//cdn.wimg.jp/profile/digjjp/20190412185039150_200.jpg" alt="ZETTOさん" width="36" height="36"></a></p>
 						</div>
 						<div class="main">
@@ -409,31 +190,10 @@
 						</div>
 					</li>
 			
-					<li class="clearfix">
-						<div class="sub">
-							<p class="img"><a href="/fwafwa7/" class="over"><img src="//cdn.wimg.jp/profile/z7v8tq/20200513014207507_200.jpg" alt="ZETTOさん" width="36" height="36"></a></p>
-						</div>
-						<div class="main">
-							<p class="name clearfix"><span class="namefirst">きりまる</span></p>
-							<p class="txt icon_font">51,247</p>
-						</div>
-					</li>
-			
-					<li class="clearfix">
-						<div class="sub">
-							<p class="img"><a href="/unitarosu9876/" class="over"><img src="//cdn.wimg.jp/profile/oi1jlz/20190929165415479_200.jpg" alt="ZETTOさん" width="36" height="36"></a></p>
-						</div>
-						<div class="main">
-							<p class="name clearfix type_on"><span class="namefirst">えだ( ¨̮ )</span><span class="icon_font user_type_ico small wearista"></span></p>
-							<p class="txt icon_font">107,057</p>
-						</div>
-					</li>
-			
 				</ol>
 				<p class="btn_more"><a href="/ranking/user/" class="over">もっと見る</a></p>
 			</section>
 			
-	
 			
 			<section id="brand">
 				<h2 class="title">ブランド</h2>
@@ -442,23 +202,18 @@
 					<li>
 						<p class="txt"><a href="/brand/uniqlo/">UNIQLO</a></p>
 					</li>
-			
 					<li>
 						<p class="txt"><a href="/brand/gu/">GU</a></p>
 					</li>
-			
 					<li>
 						<p class="txt"><a href="/brand/converse/">CONVERSE</a></p>
 					</li>
-			
 					<li>
 						<p class="txt"><a href="/brand/wego/">WEGO</a></p>
 					</li>
-			
 					<li>
 						<p class="txt"><a href="/brand/nike/">NIKE</a></p>
 					</li>
-			
 					<li>
 						<p class="txt"><a href="/brand/adidas/">adidas</a></p>
 					</li>
@@ -488,29 +243,6 @@
 				<p class="title">急上昇ワード</p>
 				<div id="keywords" class="img_after_load data"><ul class="link"><li><a href="/coordinate/?search_word=%E3%82%B7%E3%82%A2%E3%83%BC%E3%82%B7%E3%83%A3%E3%83%84&amp;trendword_flag=1">シアーシャツ</a></li><li><a href="/coordinate/?search_word=%E9%BA%A6%E3%82%8F%E3%82%89%E5%B8%BD%E5%AD%90&amp;trendword_flag=1">麦わら帽子</a></li><li><a href="/coordinate/?search_word=%E7%99%BDT%E3%82%B7%E3%83%A3%E3%83%84&amp;trendword_flag=1">白Tシャツ</a></li><li><a href="/coordinate/?search_word=%E3%82%AF%E3%83%AA%E3%82%A2%E3%83%90%E3%83%83%E3%82%B0&amp;trendword_flag=1">クリアバッグ</a></li><li><a href="/coordinate/?search_word=%E3%82%BF%E3%83%83%E3%82%AF%E3%82%A4%E3%83%B3&amp;trendword_flag=1">タックイン</a></li><li><a href="/coordinate/?search_word=%E3%83%AA%E3%83%8D%E3%83%B3%E3%83%91%E3%83%B3%E3%83%84&amp;trendword_flag=1">リネンパンツ</a></li><li><a href="/coordinate/?search_word=UNIQLO&amp;trendword_flag=1">UNIQLO</a></li><li><a href="/coordinate/?search_word=%E3%82%A2%E3%83%BC%E3%82%B9%E3%82%AB%E3%83%A9%E3%83%BC&amp;trendword_flag=1">アースカラー</a></li></ul></div>
 			</section>
-	
-			
-			<section id="category">
-				<h2 class="title">人気のカテゴリー</h2>
-				<ul>
-			
-					<li><a href="/category/tops/">トップス</a></li>
-			
-					<li><a href="/category/jacket-outerwear/">ジャケット/アウター</a></li>
-			
-					<li><a href="/category/skirt/">スカート</a></li>
-			
-					<li><a href="/category/pants/">パンツ</a></li>
-			
-					<li><a href="/category/shoes/">シューズ</a></li>
-			
-					<li><a href="/category/hat/">帽子</a></li>
-			
-				</ul>
-				<p class="btn_more"><a href="/category/" class="over">もっと見る</a></p>
-			</section>
-			
-			<div id="adLeftNav" class="adBanner adWideSkyscraper"></div>
 			
 			</div>
 		</div>

@@ -1,0 +1,103 @@
+<% provide(:title, "投稿したヘアスタイル") %>
+
+
+<article id="gbl_main">
+	
+	<header id="gbl_title_microposts_show">
+		<div id="gbl_title_container" class="clearfix">
+			<nav id="bread">
+				<ol>
+					<li><a href="/"><span>WEAR</span></a></li>
+					<li><a href="/shishi10/">ssd</a></li>
+					<li>のコーディネート</li>
+				</ol>
+			<!-- /#bread --></nav>
+		<!-- /#gbl_title_container --></div>
+		
+		<div id="user_header_mini" class="stickyUi">
+			<div class="container clearfix">
+				<div class="main clearfix">
+					<div class="avatar">
+						<p><a href="/shishi10/" class="over"><img src="//cdn.wimg.jp/content/no_image/profile/nu_80.gif" alt="ssd" width="48" height="48"></a></p>
+					<!-- /.avatar --></div>
+					<div class="content">
+						<p class="name">ssd</p>
+							<div class="meta clearfix">
+								<ul class="info clearfix">
+									<li>MEN</li>
+								</ul>
+							<!-- /.meta --></div>
+					<!-- /.content --></div>
+				<!-- /.main --></div>
+				
+				<div class="sub">
+					<div class="btn_follow">
+						<p class="btn mypage"><a href="/member/edit/" class="over"><span class="txt">プロフィール変更</span></a></p>
+						<input type="hidden" id="follow_user" value="UYCBBINALYTOBFXM">
+						<input type="hidden" id="follow_account" value="UYCBBINA20200707200843320">
+					<!-- /.btn_follow --></div>
+				<!-- /.sub --></div>
+			<!-- /.container --></div>
+		<!-- /#user_header_mini --></div>
+	<!-- /.gbl_title --></header>
+
+
+	<div id="gbl_body_microposts_show" class="clearfix">
+		
+		<div id="content_container" class="clearfix">
+			
+			<div id="content_main">
+					<div id="coordinate_img" class="tag_img_container main_image icon_font">
+						<p><%= image_tag @micropost.image.to_s ,size: '200x200'%></p>		
+						<p class="view_num icon_font">0</p>
+					</div>
+	
+					<section id="coordinate_info" class="content_bg">
+						<h1>ssdのを使ったコーディネート</h1>
+						<p class="model_info">モデル情報：
+							<a href="/men-coordinate/?from_height=171&amp;to_height=180">172cm / MEN</a>
+						</p>
+						<p class="content_txt">テスト</p>
+						
+						<div class="meta clearfix">
+							<p class="update_date icon_font"></p>
+						</div>
+					</section>
+					<div id="gAdcordedetail_2" data-google-query-id="CJKqoqiAu-oCFRPbvAodpVEO9w"><div id="google_ads_iframe_/21701332322/wear_pc_jp/cordedetail_2_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/21701332322/wear_pc_jp/cordedetail_2_0" title="3rd party ad content" name="google_ads_iframe_/21701332322/wear_pc_jp/cordedetail_2_0" width="336" height="280" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" srcdoc="" style="border: 0px; vertical-align: bottom;" data-google-container-id="1" data-load-complete="true"></iframe></div></div>
+	
+			<!-- /.content_main --></div>
+	
+			<div id="content_sub">
+				<div id="action" class="content_bg">
+					<div id="function_btn">
+						
+						<div class="container clearfix">
+							
+							<div class="btn_save detailBtn fn_btn" data-savetype="coordinate" data-itemimageid="" data-saveid="17209829" data-elementid="" data-screenid="" data-objectid="">
+								<p class="allBtn"><a href="/member/login.html?bkurl=%2Fshishi10%2F17209829%2F" class="over">お気に入り (<span>0</span>)</a></p>
+								<span class="btn"><a href="/member/login.html?bkurl=%2Fshishi10%2F17209829%2F" class="icon_font over"></a></span>
+							<!-- /.btn_save --></div>
+						
+							<div class="subContainer clearfix">
+								<div class="btn_like fn_btn" data-liketype="1" data-likeid="17209829" data-username="shishi10" data-screenid="" data-objectid="">
+									<p class="btn "><a href="/member/login.html?bkurl=%2Fshishi10%2F17209829%2F" class="icon_font over"><span>0</span></a></p>
+								<!-- /.btn_like --></div>
+								<div class="btn_comment ">
+										<p class="btn fn_btn"><a href="#post_box" class="icon_font over">0</a></p>
+								<!-- /.btn_comment --></div>
+							<!-- /.subContainer --></div>
+						
+						<!-- /.container --></div>
+					<!-- /#function_btn --></div>
+				<!-- /#action --></div>
+			<!-- /#content_sub --></div>
+		
+	
+			<div id="content_other" class="clearfix">
+				<div id="edit_btn" class="content_other_section">
+					<p class="trigger"><%= link_to "投稿を編集する", edit_micropost_path(@micropost) %></p>
+				<!-- /#edit_btn --></div>
+			<!-- /#content_other --></div>
+			
+	<!-- /#gbl_body_microposts_show --></div>
+<!-- /#gbl_main --></article>
