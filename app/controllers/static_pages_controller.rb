@@ -1,8 +1,6 @@
 class StaticPagesController < ApplicationController
   def home
     @microposts = Micropost.all
-  end
-
-  def help
+    @users = User.all
   end
 end

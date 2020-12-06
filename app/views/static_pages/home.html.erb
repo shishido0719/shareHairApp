@@ -139,17 +139,21 @@
 			<section id="user">
 				<h2 class="title">ユーザー</h2>
 				<ol>
-			
-					<li class="clearfix">
-						<div class="sub">
-							<p class="img"><a href="/wearofficial/" class="over"><img src="//cdn.wimg.jp/profile/kzighc/20170309105820975_200.jpg" alt="ZETTOさん" width="36" height="36"></a></p>
-						</div>
-						<div class="main">
-							<p class="name clearfix"><span class="namefirst">WEAR Official</span></p>
-							<p class="txt icon_font">339,419</p>
-						</div>
-					</li>
-			
+					
+					<% @users.each do |user| %>
+						<li class="clearfix">
+							<div class="sub">
+								<p class="img">
+									<%= link_to image_tag("//cdn.wimg.jp/profile/kzighc/20170309105820975_200.jpg",width: '36',height: '36', alt: "プロフィール画像"),user_path(user) %>
+								</p>
+							</div>
+							<div class="main">
+								<p class="name clearfix"><span class="namefirst"><%= user.name %></span></p>
+								<p class="txt icon_font">339,419</p>
+							</div>
+						</li>
+					<% end %>
+				
 					<li class="clearfix">
 						<div class="sub">
 							<p class="img"><a href="/takahashiai/" class="over"><img src="//cdn.wimg.jp/profile/x3s5ee/20200506020910320_200.jpg" alt="ZETTOさん" width="36" height="36"></a></p>
@@ -159,37 +163,7 @@
 							<p class="txt icon_font">2,504,965</p>
 						</div>
 					</li>
-			
-					<li class="clearfix">
-						<div class="sub">
-							<p class="img"><a href="/chihirok1215/" class="over"><img src="//cdn.wimg.jp/profile/ahl8of/20200428200154824_200.jpg" alt="ZETTOさん" width="36" height="36"></a></p>
-						</div>
-						<div class="main">
-							<p class="name clearfix type_on"><span class="namefirst">近藤千尋</span><span class="icon_font user_type_ico small wearista"></span></p>
-							<p class="txt icon_font">1,190,543</p>
-						</div>
-					</li>
-			
-					<li class="clearfix">
-						<div class="sub">
-							<p class="img"><a href="/genji/" class="over"><img src="//cdn.wimg.jp/profile/36u6j1/20160601142053569_200.jpg" alt="ZETTOさん" width="36" height="36"></a></p>
-						</div>
-						<div class="main">
-							<p class="name clearfix type_on"><span class="namefirst">げんじ</span><span class="icon_font user_type_ico small wearista"></span></p>
-							<p class="txt icon_font">719,652</p>
-						</div>
-					</li>
-			
-					<li class="clearfix">
-						<div class="sub">
-							<p class="img"><a href="/miyoshi0511/" class="over"><img src="//cdn.wimg.jp/profile/digjjp/20190412185039150_200.jpg" alt="ZETTOさん" width="36" height="36"></a></p>
-						</div>
-						<div class="main">
-							<p class="name clearfix type_on"><span class="namefirst">橋下美好</span><span class="icon_font user_type_ico small wearista"></span></p>
-							<p class="txt icon_font">219,788</p>
-						</div>
-					</li>
-			
+
 				</ol>
 				<p class="btn_more"><a href="/ranking/user/" class="over">もっと見る</a></p>
 			</section>
