@@ -30,19 +30,19 @@ nav{
 
 
 #sidebar {
-    width: 180px;
-    float: left;
-    section{
-      clear: both;
-      margin: 28px 0 0 0;
-      border-top: 1px #ddd solid;
-      padding: 18px 0 0 0;
-      #search {
-        margin-top: 0;
-        padding-bottom: 5px;
-        border-top: none;
-      }
+  width: 180px;
+  float: left;
+  section{
+    clear: both;
+    margin: 28px 0 0 0;
+    border-top: 1px #ddd solid;
+    padding: 18px 0 0 0;
+    #search {
+      margin-top: 0;
+      padding-bottom: 5px;
+      border-top: none;
     }
+  }
 }
 
 
@@ -64,8 +64,6 @@ nav{
           max-width: 100%;
           white-space: nowrap;
           overflow: hidden;
-          -ms-text-overflow: ellipsis;
-          -o-text-overflow: ellipsis;
           text-overflow: ellipsis;
           li {
             display: inline;
@@ -75,14 +73,11 @@ nav{
           li:before {
             content: "";
             font-family: 'wearicon';
-            speak: none;
             font-style: normal;
             font-weight: normal;
             font-variant: normal;
             text-transform: none;
             line-height: 1;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
             vertical-align: middle;
             letter-spacing: 0;
             font-size: 10px;
@@ -333,37 +328,40 @@ nav{
 
 
 //home.html.erb FROM
+
+//性別切り替え
 #switch_sex_type_home {
-    width:100%;
-    background:#fff;
-    border-bottom:1px #ddd solid;
-    nav {
-      width: 990px;
-      margin: 0 auto 0 auto;
-      ul{
-        letter-spacing: -.40em;
+  width:100%;
+  background:#fff;
+  border-bottom:1px #ddd solid;
+  nav {
+    width: 990px;
+    margin: 0 auto 0 auto;
+    ul{
+      letter-spacing: -.40em;
+      text-align: center;
+      li{
+        width: 160px;
+        display: inline-block;
+        letter-spacing: normal;
+        font-size: 17px;
         text-align: center;
-        li{
-          width: 160px;
-          display: inline-block;
-          letter-spacing: normal;
-          font-size: 17px;
-          text-align: center;
-          line-height: 1.2;
-          position: relative;
-          color: #888;
-          a {
-            display: block;
-            padding: 14px 0 12px 0;
-            color: #aaa;
-          }
+        line-height: 1.2;
+        position: relative;
+        color: #888;
+        a {
+          display: block;
+          padding: 14px 0 12px 0;
+          color: #aaa;
         }
       }
     }
+  }
 }
 
 #gbl_body_home {
   width: 100%;
+  //おすすめ・タイムライン切り替え
   #switch_menu {
     width: 400px;
     margin: 13px auto 0 auto;
@@ -383,73 +381,288 @@ nav{
       }  
     } 
   }
-  #content_container {
+}
+
+
+#content_container {
+  clear: both;
+  margin: 30px auto 0 auto;
+  padding: 0 0 50px 0;
+  width: 990px;
+  position: relative;
+  .title {
+    font-size: 18px;
+    color: #333;
+  }
+  //もっとみるボタン
+  .btn_more {
+    width: 84px;
+    font-size: 11px;
     clear: both;
-    margin: 30px auto 0 auto;
-    padding: 0 0 50px 0;
-    width: 990px;
-    position: relative;
-    #content {
-      width: 780px;
-      float: right;
-      .pickupTagList {
-        clear: both;
-        display: block;
-        margin: 0 0 0 0;
-        padding: 0 0 0 0;
-        .title {
-          font-size: 18px;
-          color: #333;
+    margin: 8px 0 0 0;
+    float: right;
+    a {
+      display: block;
+      padding: 8px 0 8px 0;
+      text-align: center;
+      text-decoration: none;
+      color: #888;
+      font-weight: bold;
+      border: 1px #ddd solid;
+      border-radius: 2px;
+      background: #fafafa;
+      padding: 5px 0 5px 0;
+  }
+  }
+  //検索結果
+  #content {
+    width: 780px;
+    float: right;
+  }
+ //サイドバー
+  #sidebar {
+    width: 180px;
+    float: left;
+    section {
+      clear: both;
+      margin: 28px 0 0 0;
+      border-top: 1px #ddd solid;
+      padding: 18px 0 0 0;
+      ol{
+        li {
+          position: relative;
         }
-        ul {
-          margin: -8px 0 0 -18px;
-          width: 900px;
-          li {
-            width: 248px;
+      }
+    }
+    section:first-child {
+      border-top: none;
+      padding-top: 0;
+    }
+    section:after {
+      clear: both;
+      content: "";
+      display: table;
+    }  
+    // 探す
+    section#search {
+      margin-top: 0;
+      padding-bottom: 5px;
+      border-top: none;
+      ul {
+        padding: 5px 0 0 0;
+        li {
+          font-size: 13px;
+          margin: 4px 0 0 0;
+          clear: both;
+          a {
+            display: block;
+            color: #333;
+            padding: 5px 0 5px 0;
+            float: right;
+            width: 156px;
+          }
+        }
+        li:before {
+          color: #333;
+          font-size: 17px;
+          float: left;
+          width: 24px;
+          padding: 7px 0 0 0;
+        }
+      }
+    }
+    // ユーザー
+    section#user {
+      margin-top: 15px;
+      ol {
+        padding: 0 0 5px 0;
+        li:first-child {
+          margin-top: 14px;
+        }
+        li {
+          clear: both;
+          margin: 18px 0 0 0;
+          .sub {
+            width: 36px;
             float: left;
-            margin: 18px 0 0 18px;
-            border: 1px #ddd solid;
-            background: #fff;
-            border-radius: 3px;
-            position: relative;
-            .image_container {
-              position: relative;
-              z-index: 1;
-              background: #eaeaea;
-              border-radius: 2px 2px 0 0;
+            img {
+              border-radius: 50%;
+              border: 1px #ddd solid;
+            }
+          }
+          .main {
+            width: 136px;
+            float: right;
+            padding: 2px 0 0 0;
+            .name {
+              font-size: 12px;
+              line-height: 1.2;
+              font-weight: bold;
+              .namefirst {
+                float: left;
+                max-width: 100%;
+                max-width: 100%;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+              }
+              .clearfix:after {
+                content: '.';
+                display: block;
+                height: 0;
+                clear: both;
+                visibility: hidden;
+              }
+            }
+            .txt {
+              font-size: 11px;
+              line-height: 1.2;
+              margin: 3px 0 0 0;
+              font-family: "Helvetica Neue", "Helvetica", "Arial", "Verdana", sans-serif;
+            }
+            .txt:before {
+              content: "";
+              vertical-align: -1px;
+              margin: 0 3px 0 0;
+              color: #333;
             }
           }
         }
       }
-      
     }
-    #sidebar {
-      width: 180px;
-      float: left;
-      #search {
-        margin-top: 0;
-        padding-bottom: 5px;
-        border-top: none;
-        ul {
-          padding: 5px 0 0 0;
-          li {
-            font-size: 13px;
-            margin: 4px 0 0 0;
-            clear: both;
-            a {
-              display: block;
-              color: #333;
-              padding: 5px 0 5px 0;
-              float: right;
-              width: 156px;
-            }
-          }
+    //ブランド
+    section#brand ol{
+      padding: 5px 0 0 0;
+      li {
+        padding: 0;
+        font-size: 13px;
+        a {
+          color: #333;
+          display: block;
+          padding: 5px 6px 5px 0;
+          max-width: 100%;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+    }
+    // 急上昇ワード
+    section#trend_keyword ul {
+      padding: 6px 0 0 0;
+      li {
+        font-size: 13px;
+        a {
+          color: #333;
+          display: block;
+          padding: 5px 6px 5px 0;
+          max-width: 100%;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
         }
       }
     }
   }
 }
+
+//検索結果
+#content section#ranking, #content section#recommend, #content section.pickupTagList {
+  clear: both;
+  ol,ul{
+    margin: -8px 0 0 -18px;
+    width: 798px;
+    padding-left: 0;
+    li{
+      width: 248px;
+      float: left;
+      margin: 18px 0 0 18px;
+      border: 1px #ddd solid;
+      background: #fff;
+      border-radius: 3px;
+      position: relative;
+    }
+  }
+}
+
+//プロフィール　画像部分
+#content section#ranking ol li .image_container, #content section#ranking ul li .image_container, #content section#recommend ol li .image_container, #content section#recommend ul li .image_container, #content section.pickupTagList ol li .image_container, #content section.pickupTagList ul li .image_container {
+  position: relative;
+  z-index: 1;
+  background: #eaeaea;
+  border-radius: 2px 2px 0 0;
+  img {
+    position: relative;
+    z-index: 1;
+    img {
+    border-radius: 2px 2px 0 0;
+    width: 246px;
+    height: 328px;
+    }
+  }
+}
+//プロフィール　名前部分
+#content section#ranking ol li .profile, #content section#ranking ul li .profile, #content section#recommend ol li .profile, #content section#recommend ul li .profile, #content section.pickupTagList ol li .profile, #content section.pickupTagList ul li .profile {
+  padding: 10px 10px 10px 10px;
+  .content {
+    width: 156px;
+    float: left;
+    padding: 2px 0 0 0;
+    .sub {
+      width: 32px;
+      float: left;
+      .img {
+        background-size: 14px 14px;
+        img {
+          border-radius: 50%;
+          border: 1px #ddd solid;
+          width: 32px;
+          height: 32px;
+        }
+      }
+    }
+    .main {
+      width: 114px;
+      float: right;
+      .name {
+        font-size: 13px;
+        line-height: 1.2;
+        font-weight: bold;
+        .namefirst {
+          max-width: 82%;
+        }
+        .user_type_ico {
+          float: left;
+        }
+      }
+      .txt {
+        font-size: 11px;
+        line-height: 1.2;
+        margin: 3px 0 0 0;
+        font-family: "Helvetica Neue", "Helvetica", "Arial", "Verdana", sans-serif;
+      }
+    }
+  }
+  .btn_block {
+    width: 64px;
+    float: right;
+    .btn {
+      width: 64px;
+      position: relative;
+      margin: 0 auto 0 auto;
+      a{
+        font-size: 9px;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        letter-spacing: 0;
+      }
+    }
+  }
+    
+}
+
 //home.html.erb TO
+
 
 
 //common_index_css  FROM
