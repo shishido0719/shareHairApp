@@ -667,7 +667,6 @@ nav{
 
 //common_index_css  FROM
 
-
 #switch_content_type_index {
     width: 100%;
     background: #fff;
@@ -857,12 +856,256 @@ nav{
 
 
 //users/swow.html.erb FROM
-#gbl_body_show {
+
+#gbl_title {
+  padding: 18px 0 30px 0;
+  background: #fff;
+  min-height: 133px;
+  border-bottom: 1px #ddd solid;
+  position: relative;
+  #gbl_title_container {
+    width: 990px;
+    margin: 0 auto 0 auto;
+    position: relative;
+    z-index: 50;
+  }
+}
+// パンくずリスト
+#bread {
+  width: 790px;
+  ol {
+    letter-spacing: -.40em;
+    position: relative;
+    margin: 0 0 0 -5px;
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    li:first-child {
+      vertical-align: middle;
+      margin: 0 -3px 0 0;
+      display: inline-block;
+    }
+    li {
+      display: inline;
+      font-size: 13px;
+      letter-spacing: normal;
+    }
+  }
+}
+// ユーザープロフィール
+#user_header {
+  clear: both;
+  margin: 22px 0 0 0;
+  #user_sub {
+  width: 150px;
+  float: left;
+  margin: 0 0 0 42px;
+  }
+  #user_main {
+  width: 750px;
+  float: right;
+  padding: 3px 0 0 0;
+  }
+}
+
+// プロフィール画像
+#user_header #user_sub .image {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  p.img {
+    font-size: 0;
+    line-height: 1;
+    letter-spacing: 0;
+    img {
+      border-radius: 50%;
+      border: 1px #ddd solid;
+    }
+  }
+}
+// フォローボタン
+#user_header #user_sub .btn_follow {
+  width: 134px;
+  margin: 18px auto 0 auto;
+  .btn {
+    position: relative;
+    width: 134px;
+    a {
+      display: block;
+      padding: 8px 0 8px 0;
+      text-align: center;
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+      border: 1px #1e78ad solid;
+      border-radius: 2px;
+      background: #2490d0;
+      padding-bottom: 10px;
+      font-size: 12px;
+      line-height: 1.2;
+      position: relative;
+      z-index: 1;
+    }
+  }
+}
+
+#user_header #user_main .intro {
+  .name {
+    font-size: 24px;
+    line-height: 1.4;
+    color: #333;
+    .user_type_ico {
+      vertical-align: -2px;
+    }
+  }
+  .meta {
+    margin: 1px 0 0 0;
+    ul.info {
+      float: left;
+      padding: 4px 0 0 0;
+      li:first-child {
+        margin-left: 0;
+      }
+      li {
+        float: left;
+        font-size: 12px;
+        margin: 0 0 0 8px;
+        position: relative;
+      }
+    }
+    ul.link {
+      float: left;
+      margin: 0 0 0 12px;
+      position: relative;
+      li {
+        float: left;
+        width: 27px;
+        margin: 0 0 0 8px;
+        padding: 0 0 0 4px;
+        a {
+          font-size: 0;
+          line-height: 1;
+          letter-spacing: 0;
+          border: 1px #aaa solid;
+          border-radius: 50%;
+          display: block;
+          width: 27px;
+          height: 27px;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+  
+#user_header #user_main .profile {
+  font-size: 13px;
+  margin: 15px 0 0 0;
+  .txt {
+    overflow: hidden;
+  }
+  .more {
+    margin: 2px 0 -8px 0;
+    a {
+      display: inline-block;
+      padding: 5px 0 5px 0;
+    }
+  }
+}
+// お気に入りブランド
+#user_header #user_main .favorite {
+  position: relative;
+  margin: 0 0 0 -17px;
+  padding: 8px 0 0 0;
+  .link_list {
+    margin-top: 8px;
+    .label {
+      font-size: 11px;
+      text-align: center;
+      width: 94px;
+      float: left;
+      line-height: 1.4;
+      margin: 8px 0 0 0;
+    }
+    ul {
+      float: right;
+      width: 673px;
+      position: relative;
+      margin: 2px 0 0 -6px;
+      li {
+        font-size: 12px;
+        text-align: center;
+        float: left;
+        margin: 6px 0 0 6px;
+        a {
+          display: block;
+          background: #fff;
+          color: #333;
+          border: 1px #e2e2e2 solid;
+          padding: 6px 12px 6px 12px;
+          line-height: 1.2;
+          border-radius: 2px;
+        }
+      }
+    }
+  }
+}
+  
+
+
+
+
+// よく着用するブランド
+#gbl_main #gbl_related_link {
+  padding-bottom: 0;
+  .container {
+    height: 43px;
+    width: 990px;
+    margin: 0 auto 0 auto;
+    overflow: hidden;
+    .title {
+      width: 105px;
+      text-align: center;
+      margin: 5px 0 0 0;
+      line-height: 1.4;
+      float: left;
+      font-size: 11px;
+      position: relative;
+      z-index: 2;
+    }
+    ul {
+      margin: 0;
+      position: relative;
+      z-index: 1;
+      li:first-child {
+        margin-left: 0;
+      }
+      li {
+        margin-bottom: 5px;
+        font-size: 12px;
+        text-align: center;
+        float: left;
+        margin: 6px 0 0 6px;
+        a {
+          display: block;
+          background: #fff;
+          color: #333;
+          border: 1px #e2e2e2 solid;
+          padding: 6px 12px 6px 12px;
+          line-height: 1.2;
+          border-radius: 2px;
+        }
+      }
+    }
+  }
+}
+
+
+#gbl_body {
   clear: both;
   width: 990px;
   margin: 0 auto 0 auto;
   padding: 10px 0 0 0;
-  
   #user_menu {
     clear: both;
     padding: 10px 0 0 0;
@@ -870,141 +1113,274 @@ nav{
       background: #fff;
       border: 1px #ddd solid;
       border-radius: 3px;
-      .main {
-        float: left;
-      }
-      li {
-        width: 120px;
-        float: left;
-        text-align: center;
-        font-family: "Helvetica Neue", "Helvetica", "Arial", "Verdana", sans-serif;
-        font-size: 18px;
-        font-weight: bold;
-        line-height: 1.4;
-        span {
-          display: block;
-          font-size: 10px;
-          font-weight: normal;
-        }
-      }
     }
   }
-  
   #content {
     clear: both;
     margin: 18px 0 0 0;
-    #main_list {
-      padding-top: 4px;
-      .list {
-        position: relative;
-        width: 1008px;
-        margin: -18px 0 0 -18px;
-        li {
-          display: inline-block;
-          position: relative;
-          float: left;
-          border: 1px #ddd solid;
-          border-radius: 3px;
-          width: 220px;
-          margin: 15px 0 0 15px;
+  }
+}
+
+//コーディネート・お気に入り
+#user_menu nav .main {
+  float: left;
+  li {
+    border-right: 1px #ddd solid;
+    width: 120px;
+    float: left;
+    text-align: center;
+    font-family: "Helvetica Neue", "Helvetica", "Arial", "Verdana", sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.4;
+    a {
+      display: block;
+      color: #333;
+      padding: 8px 0 8px 0;
+      span {
+        display: block;
+        font-size: 10px;
+        font-weight: normal;
+      }
+    }
+  }
+}
+
+// フォロー・フォロワー
+#user_menu nav .sub {
+  float: right;
+  li {
+    border-left: 1px #ddd solid;
+    width: 120px;
+    float: left;
+    text-align: center;
+    font-family: "Helvetica Neue", "Helvetica", "Arial", "Verdana", sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.4;
+    a {
+      display: block;
+      color: #333;
+      padding: 8px 0 8px 0;
+      span {
+        display: block;
+        font-size: 10px;
+        font-weight: normal;
+      }
+    }
+  }
+}
+
+// 投稿
+#main_list .list {
+  position: relative;
+  width: 1008px;
+  margin: -18px 0 0 -18px;
+  li {
+    position: relative;
+    float: left;
+    border: 1px #ddd solid;
+    border-radius: 3px;
+    width: 234px;
+    margin: 18px 0 0 18px;
+    background: #fff;
+    display: block;
+    .image {
+      position: relative;
+      width: 100%;
+      height: 310px;
+      overflow: hidden;
+      background: #f6f7f8;
+    }
+    .item {
+      padding: 9px 5px 9px 10px;
+      min-height: 66px;
+    }
+  }
+}
+//投稿_メイン画像
+#main_list .list li .image a{
+  display: block;
+  .img {
+    font-size: 0;
+    line-height: 1;
+    letter-spacing: 0;
+    img {
+      border-radius: 2px 2px 0 0;
+      width: 100%;
+      height: 310px;
+    }
+  }
+}
+//投稿_更新時刻
+#main_list .list li .image .show_dt {
+  color: #fff;
+  font-size: 11px;
+  text-shadow: 1px 1px 1.5px rgba(0, 0, 0, 0.6);
+  position: absolute;
+  bottom: 8px;
+  left: 9px;
+  line-height: 1.2;
+}
+//投稿_アイテム画像
+#main_list .list li .item .sub{
+  float: left;
+  width: 40px;
+  height: 48px;
+  overflow: hidden;
+  background: #f6f7f8;
+  position: relative;
+  .img {
+    font-size: 0;
+    line-height: 1;
+    letter-spacing: 0;
+    background-size: 18px 18px;
+  }
+}
+//投稿_アイテム名
+#main_list .list li .item .main {
+  width: 167px;
+  float: right;
+  padding: 5px 0 0 0;
+  .brand_name {
+    font-size: 13px;
+    letter-spacing: 0;
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.2;
+  }
+  .txt_container {
+    line-height: 1;
+   .txt {
+      color: #888;
+      letter-spacing: 0;
+      line-height: 1;
+      font-size: 12px;
+      margin: 5px 0 0 0;
+      display: inline-block;
+      max-width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 100%;
+    }
+  }
+}
+
+//保存・いいねボタン
+#main_list .list li .meta {
+  padding: 6px 0 9px 0;
+  border-top: 1px #ddd solid;
+  ul {
+    margin: 0;
+    width: auto;
+    padding: 0 16px 0 16px;
+    li {
+      border: none;
+      border-radius: none;
+      margin: 0;
+      width: 50%;
+      text-align: center;
+      font-family: "Helvetica Neue", "Helvetica", "Arial", "Verdana", sans-serif;
+      font-weight: bold;
+      font-size: 15px;
+      .btn a {
+        color: #333;
+        font-weight: bold;
+      }
+      a:before {
+        content: "";
+        margin: 0 5px 0 0;
+        color: #333;
+        vertical-align: -4px;
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+//改ページ
+#pager_container {
+  clear: both;
+  margin: 50px 0 0 0;
+  #pager {
+    float: right;
+    p a, p span {
+      display: block;
+      width: 90px;
+      border-radius: 3px;
+      text-align: center;
+      font-size: 0;
+      line-height: 1;
+      letter-spacing: 0;
+      padding: 10px 0 10px 0;
+      background: #eaeaea;
+    }
+    .prev {
+      margin: 0 10px 0 0;
+      float: left;
+    }
+    ul {
+      float: left;
+      margin: 0 10px 0 10px;
+      padding: 0 0 0 0;
+      li {
+        margin: 5px 5px 0 5px;
+        border-left: 1px #ddd solid;
+        float: left;
+        font-size: 14px;
+        line-height: 1;
+        a{
+          text-align: center;
+        }
+      }
+    }
+    .next {
+      margin: 0 0 0 10px;
+      float: left;
+    }
+  }
+}
+
+// 関連ハッシュタグ
+#related_content {
+clear: both;
+border-top: 1px #ddd solid;
+margin: 30px 0 0 0;
+  .link_list {
+    clear: both;
+    margin: 23px 0 0 0;
+    .tit {
+      font-size: 14px;
+      font-weight: bold;
+    }
+    ul {
+      position: relative;
+      margin: 2px 0 0 -6px;
+       li {
+        font-size: 12px;
+        text-align: center;
+        float: left;
+        margin: 6px 0 0 6px;
+        a {
+          display: block;
           background: #fff;
-          .image {
-            display: inline-block;
-            position: relative;
-            width: 100%;
-            height: 310px;
-            overflow: hidden;
-            background: #f6f7f8;
-          }
-          .meta {
-            padding: 6px 0 9px 0;
-            border-top: 1px #ddd solid;
-            ul {
-              margin: 0;
-              width: auto;
-              padding: 0 16px 0 16px;
-              li {
-                border: none;
-                border-radius: none;
-                margin: 0;
-                width: 50%;
-                text-align: center;
-                font-family: "Helvetica Neue", "Helvetica", "Arial", "Verdana", sans-serif;
-                font-weight: bold;
-                font-size: 15px;
-              }
-            }
-          }
-        }
-      }
-    }
-    #pager_container {
-      clear: both;
-      margin: 50px 0 0 0;
-      #pager {
-        width: 30%;
-        float: right;
-        .prev {
-          margin: 0 10px 0 0;
-          float: left;
-        }
-        ul {
-          float: left;
-          margin: 0 10px 0 10px;
-          padding: 0 0 0 0;
-          li {
-            margin: 5px 5px 0 5px;
-            border-left: 1px #ddd solid;
-            float: left;
-            font-size: 14px;
-            line-height: 1;
-            a{
-              text-align: center;
-            }
-          }
-        }
-        .next {
-          margin: 0 0 0 10px;
-          float: left;
-        }
-      }
-    }
-    #related_content {
-      clear: both;
-      border-top: 1px #ddd solid;
-      margin: 30px 0 0 0;
-      .link_list {
-        clear: both;
-        margin: 23px 0 0 0;
-        .tit {
-          font-size: 14px;
-          font-weight: bold;
-        }
-        ul {
-          position: relative;
-          margin: 2px 0 0 -6px;
-           li {
-            font-size: 12px;
-            text-align: center;
-            float: left;
-            margin: 6px 0 0 6px;
-            a {
-              display: block;
-              background: #fff;
-              color: #333;
-              border: 1px #e2e2e2 solid;
-              padding: 6px 12px 6px 12px;
-              line-height: 1.2;
-              border-radius: 2px;
-            }
-          }
+          color: #333;
+          border: 1px #e2e2e2 solid;
+          padding: 6px 12px 6px 12px;
+          line-height: 1.2;
+          border-radius: 2px;
         }
       }
     }
   }
-
 }
+
 //users/swow.html.erb TO
+
+
 
 
 

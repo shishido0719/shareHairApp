@@ -26,6 +26,15 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @microposts = @user.microposts
+    if current_user ==  @user then
+      redirect_to  controller: :users, action: :my_page
+    end
+      
+  end
+  
+  def my_page
+    @user = current_user
+    @microposts = @user.microposts
   end
   
   def update

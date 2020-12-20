@@ -1,195 +1,200 @@
 <% provide(:title, "Show user") %>
 
 <article id="gbl_main">
-	
+
 	<header id="gbl_title" class="toppage">
 		<div id="gbl_title_container" class="clearfix">
 			
 			<nav id="bread">
 				<ol>
 					<li><a href="/"><span>WEAR</span></a></li>
-					<li><a href="/member/">マイページ</a></li>
+					<li><a href="/takahashiai/"><%= @user.name %></a></li>
 					<li>コーディネート一覧</li>
 				</ol>
-			</nav>
-	
+			<!-- /#bread --></nav>
+			
+			
 			<div id="user_header" class="clearfix">
 				
 				<div id="user_sub">
 					<div class="image">
-						<p class="img"><img src="//cdn.wimg.jp/content/no_image/profile/nu_200.gif" srcset="//cdn.wimg.jp/content/no_image/profile/nu_640.gif 2x" alt="ssd" width="148" height="148"></p>
+						<p class="img"><img src="//cdn.wimg.jp/profile/x3s5ee/20200705085346207_200.jpg" srcset="//cdn.wimg.jp/profile/x3s5ee/20200705085346207_640.jpg 2x" alt="高橋愛" width="148" height="148"></p>
 					</div>
 					<div class="btn_follow">
-						<p class="btn mypage"><%= link_to "プロフィール変更", edit_user_path(@user) %></p>
-	        </div>
-				</div>
-				
+						<p class="btn" data-memberid="6853" data-username="takahashiai" data-changetxt="フォロー中"><a href="/member/login.html?bkurl=%2Ftakahashiai%2F" class="icon_font over"><span class="txt">フォローする</span></a></p>
+						<input type="hidden" id="follow_user" value="JVDCBTETQVDOOAEK">
+						<input type="hidden" id="follow_account" value="JVDCBTET20201212232245468">
+					<!-- /.btn_follow --></div>
+				<!-- /#user_sub --></div>
+			
 				<div id="user_main">
 					<section class="intro">
-						<% flash.each do |message_type, message| %>
-	        		<%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
-	      		<% end %>
-						<h1 class="name"><%= @user.name %></h1>
+						<h1 class="name"><%= @user.name %><span class="user_type_ico big icon_font wearista"></span></h1>
 						<div class="meta clearfix">
 							<ul class="info clearfix">
 								<li><%= @user.email %></li>
-								<li>MEN</li>
+								<li>154cm</li>
+								<li>WOMEN</li>
+								<li>ミディアムヘアー</li>
+							</ul>
+							<ul class="link clearfix">
+								<li><a href="http://ameblo.jp/takahashiai-blog/" target="_blank" rel="noopener noreferrer" class="ico_ameba">Ameba</a></li>
+								<li><a href="http://instagram.com/i_am_takahashi" target="_blank" rel="noopener noreferrer" class="ico_instagram">Instagram</a></li>
 							</ul>
 						</div>
-					</section>
+					<!-- /.intro --></section>
+					
 					<section class="profile">
-						<p class="txt" data-moretxt="プロフィールをもっと見る" data-closetxt="閉じる"></p>
-					</section>
-				<!-- /#user_main --></div>
+						<p class="txt" data-moretxt="プロフィールをもっと見る" data-closetxt="閉じる" style="height: 40px;">女優・モデル
+						<br>
+						<br>instagram
+						<br>「i_am_takahashi」
+						<br>
+						<br>follow mee♡♡♡<br><br></p>
+						<p class="more"><a href="javascript:void(0);">プロフィールをもっと見る</a></p>
+					<!-- /.profile --></section>
 				
+					<div class="favorite">
+						<section class="brand link_list clearfix">
+							<h2 class="label">お気に入り<br>ブランド</h2>
+							<ul class="clearfix">
+								<li><a href="/brand/maisonmargiela/">Maison Margiela</a></li>
+							</ul>
+						</section>
+					<!-- /.favorite --></div>
+				<!-- /#user_main --></div>
+			
 			<!-- /#user_header --></div>
 			
 		<!-- /#gbl_title_container --></div>
 	<!-- /#gbl_title --></header>
 	
-
-	<div id="gbl_body_show" class="clearfix">
+	
+	<section id="gbl_related_link">
+		<div class="container link_list">
+			<h2 class="title">よく着用する<br>ブランド</h2>
+			<ul class="clearfix">
+				<li><a href="/brand/uniqlo/">UNIQLO</a></li>
+				<li><a href="/brand/hm/">H&amp;M</a></li>
+				<li><a href="/brand/americanapparel/">American Apparel</a></li>
+				<li><a href="/brand/haco/">haco!</a></li>
+				<li><a href="/brand/drmartens/">Dr.Martens</a></li>
+				<li><a href="/brand/jouetie/">jouetie</a></li>
+			</ul>
+		</div>
+	<!-- /#gbl_related_link --></section>
+	
+	
+	<div id="gbl_body" class="clearfix">
 		
 		<div id="user_menu">
 			<nav class="clearfix">
-				
-
 				<div class="main">
 					<ul class="clearfix">
-						<li class="current"><a href="/member/" rel="nofollow"><%=@microposts.count %><span>コーディネート</span></a></li>
-						<li><a href="/member/favorite/">3<span>お気に入り</span></a></li>
-						<li><a href="/member/closet.html">2<span>クローゼット</span></a></li>
-						<li><a href="/member/article.html" rel="nofollow">0<span>日記</span></a></li>
+						<li class="current"><a href="/takahashiai/">2253<span>コーディネート</span></a></li>
+						<li><a href="/takahashiai/favorite/">825<span>お気に入り</span></a></li>
 					</ul>
-				</div>
-				
-				
+				<!-- /.main --></div>
 				<div class="sub">
 					<ul class="clearfix">
-						<li><a href="/member/follower/">4<span>フォロワー</span></a></li>
-						<li><a href="/member/follow/">23<span>フォロー</span></a></li>
+						<li><a href="/takahashiai/follower/">2543494<span>フォロワー</span></a></li>
+						<li><a href="/takahashiai/follow/">258<span>フォロー</span></a></li>
 					</ul>
-				</div>
-				
-			<!-- /.clearfix --></nav>
+				<!-- /.sub --></div>
+			</nav>
 		<!-- /#user_menu --></div>
-	
+		
+		
 		<div id="content">
-			<p class="btn"><%= link_to "新規投稿する", new_micropost_path %></p>
-			<% @microposts.each do |micropost| %>	
+			
 			<div id="main_list">
 				<ul class="list img_after_load clearfix">
-			
-					<li class="like_mark" data-snapid="17174150">
-						<p><%= micropost.content %></p>
+					<% @microposts.each do |micropost| %>
+					<li class="like_mark" data-snapid="18281882">
 						<div class="image">
-							<a class="over" href="/genji/17174150/" style="background-image: none;">
-								<p class="img"><%= link_to image_tag(micropost.image.to_s ,size: '200x200'),micropost_path(micropost)%></p>
+							<a class="over" href="/takahashiai/18281882/" style="background-image: none;">
+								<p class="img"><%= link_to image_tag(micropost.image.to_s ,size: '232x310'),micropost_path(micropost)%></p>
 								<p class="show_dt icon_font"><%= micropost.updated_at %></p>
 							</a>
 						</div>
-						
-						<div class="meta clearfix">
-							<ul class="clearfix">
-								<li class="save icon_font"><div class="btn_save fn_btn" data-savetype="coordinate" data-itemimageid="" data-saveid="17210935" data-elementid="" data-screenid="1" data-objectid="">
-									<p class="btn "><a href="/member/login.html?bkurl=%2Ftakahashiai%2F" class="icon_font over"><span>55</span></a></p>
-									<input type="hidden" id="fav_coordinate" value="SSJSWYQQODMAKNNP">
-									<input type="hidden" id="fav_snap" value="SSJSWYQQ20200708215618445">
-									<input type="hidden" id="fav_item" value="">
-									<input type="hidden" id="fav_goods" value="">
-								</div></li>
-								
-								<li class="like icon_font"><div class="btn_like fn_btn" data-liketype="1" data-likeid="17210935" data-username="takahashiai" data-screenid="1" data-objectid="">
-				
-									<p class="btn "><a href="/member/login.html?bkurl=%2Ftakahashiai%2F" class="icon_font over"><span>179</span></a></p>
+						<div class="item clearfix" data-screenid="1"><div class="sub"><p class="img" style="background-image: none;"><a href="/snapitem/128744123/" class="over af_coordinate_item" data-objectid="18281882" data-screenid="1"><img src="https://cdn.wimg.jp/closet/x3s5ee/20201015233014208_70.jpg" data-originalretina="//cdn.wimg.jp/closet/x3s5ee/20201015233014208_125.jpg" alt="OSHIMA REI（オオシマレイ）の「スウェット」" width="40" height="48" style="opacity: 1;"></a></p></div><div class="main"><p class="brand_name">OSHIMA REI</p><div class="txt_container icon_font"><p class="txt category">スウェット</p></div></div></div>
+							<div class="meta clearfix">
+								<ul class="clearfix">
+									<li class="save icon_font">
+										<div class="btn_save fn_btn" data-savetype="coordinate" data-itemimageid="" data-saveid="18281882" data-elementid="" data-screenid="1" data-objectid="">
+										<p class="btn "><a href="/member/login.html?bkurl=%2Ftakahashiai%2F" class="icon_font over"><span>28</span></a></p>
+										</div>
+									</li>
 									
-									<input type="hidden" id="like_coordinate" value="SSJSWYQQODMAKNNP">
-									<input type="hidden" id="like_snap" value="SSJSWYQQ20200708215618445">
-									<input type="hidden" id="like_item" value="">
-									<input type="hidden" id="like_goods" value="">
-								<!-- /.btn_like --></div></li>
-							</ul>
-						<!-- /.meta clearfix --></div>
+									<li class="like icon_font">
+										<div class="btn_like fn_btn" data-liketype="1" data-likeid="18281882" data-username="takahashiai" data-screenid="1" data-objectid="">
+											<p class="btn "><a href="/member/login.html?bkurl=%2Ftakahashiai%2F" class="icon_font over"><span>105</span></a></p>
+										<!-- /.btn_like --></div>
+									</li>
+								</ul>
+							</div>
+						<!-- /.like_mark --></li>
+						<% end %>
+					<!-- /#list --></ul>
+				<!-- /#main_list --></div>
+				
 						
-					<!-- /.like_mark --></li>
-					<% end %>
-			
-			
-					<li class="like_mark" data-snapid="17174021">
+				<div id="pager_container" class="clearfix">
+					<div id="pager" class="clearfix">
+						<p class="prev"><span class="icon_font">PREV</span></p>
+						<ul class="clearfix">
+							<li><strong>1</strong></li>
+							<li><a href="/takahashiai/?pageno=2">2</a></li>
+							<li><a href="/takahashiai/?pageno=3">3</a></li>
+							<li><a href="/takahashiai/?pageno=4">4</a></li>
+							<li><a href="/takahashiai/?pageno=5">5</a></li>
+							<li class="doted">...</li>
+							<li><a href="/takahashiai/?pageno=41">41</a></li>
+						</ul>
+						<p class="next"><a href="/takahashiai/?pageno=2" class="icon_font">NEXT</a></p>
+					<!-- /#pager --></div>
+				<!-- /#pager_container --></div>
+				
+				
 						
-						<div class="image">
-							<a class="over" href="/genji/17174021/" style="background-image: none;">
-								<p class="img"><img src="https://cdn.wimg.jp/coordinate/36u6j1/20200706085307430/20200706085307430_320.jpg" data-originalretina="//cdn.wimg.jp/coordinate/36u6j1/20200706085307430/20200706085307430_500.jpg" alt="げんじさんの「【WYM LIDNM】ART GRAPHIC-TEE/カットソー（WYM LIDNM｜ウィム バイ リドム）」を使ったコーディネート" height="310" width="232" style="opacity: 1;"></p>
-								<p class="show_dt icon_font">昨日</p>
-							</a>
-						</div>
-						
-						<div class="item clearfix buyitem" data-screenid="1"><div class="sub"><p class="img" style="background-image: none;"><a href="/item/48097646/" class="over af_coordinate_item" data-objectid="17174021" data-screenid="1"><img src="https://c.imgz.jp/234/53512234/53512234b_14_d_70.jpg" data-originalretina="//c.imgz.jp/234/53512234/53512234b_14_d_125.jpg" alt="WYM LIDNM（ウィム バイ リドム）の「【WYM LIDNM】ART GRAPHIC-TEE/カットソー（Tシャツ・カットソー）」" width="40" height="48" style="opacity: 1;"></a></p></div><div class="main"><p class="brand_name">WYM LIDNM</p><div class="txt_container icon_font"><p class="txt"><span class="price">¥4,400</span><span class="size partition">size:L</span></p></div></div></div>
-						
-						<div class="meta clearfix">
-							<ul class="clearfix">
-								
-								<li class="save icon_font">
-									<div class="btn_save fn_btn" data-savetype="coordinate" data-itemimageid="" data-saveid="17174021" data-elementid="" data-screenid="1" data-objectid="">
-										<p class="btn "><a href="/member/login.html?bkurl=%2Fgenji%2F" class="icon_font over"><span>140</span></a></p>
-										<input type="hidden" id="fav_coordinate" value="CNQAVOTDXEBLHJQL">
-										<input type="hidden" id="fav_snap" value="CNQAVOTD20200707161015839">
-										<input type="hidden" id="fav_item" value="">
-										<input type="hidden" id="fav_goods" value="">
-									</div>
-								</li>
-								
-								<li class="like icon_font">
-									<div class="btn_like fn_btn" data-liketype="1" data-likeid="17174021" data-username="genji" data-screenid="1" data-objectid="">
-										<p class="btn "><a href="/member/login.html?bkurl=%2Fgenji%2F" class="icon_font over"><span>370</span></a></p>
-										<input type="hidden" id="like_coordinate" value="CNQAVOTDXEBLHJQL">
-										<input type="hidden" id="like_snap" value="CNQAVOTD20200707161015839">
-										<input type="hidden" id="like_item" value="">
-										<input type="hidden" id="like_goods" value="">
-									<!-- /.btn_like --></div>
-								</li>
-								
-							<!-- /.meta --></ul>
-						<!-- /.meta --></div>
-					<!-- /.like_mark --></li>
-				<!-- /.list --></ul>
-			<!-- /#main_list --></div>
-			
-			<div id="pager_container" class="clearfix">
-				<div id="pager" class="clearfix">
-					<p class="prev"><span class="icon_font">PREV</span></p>
-					<ul class="clearfix">
-						<li><strong>1</strong></li>
-						<li><a href="/genji/?pageno=2">2</a></li>
-						<li><a href="/genji/?pageno=3">3</a></li>
-						<li><a href="/genji/?pageno=4">4</a></li>
-						<li><a href="/genji/?pageno=5">5</a></li>
-						<li class="doted">...</li>
-						<li><a href="/genji/?pageno=27">27</a></li>
-					</ul>
-					<p class="next"><a href="/genji/?pageno=2" class="icon_font">NEXT</a></p>
-				<!-- /#pager --></div>
-			<!-- /#pager_container --></div>
-			
-			<div id="related_content">
-				<div class="link_list tag">
-					<h3 class="tit">げんじがよく使用するタグからコーディネートを探す</h3>
-					<ul class="clearfix">
-						<li><a href="/coordinate/?tag_ids=2763">革靴</a></li>
-						<li><a href="/coordinate/?tag_ids=11524">黒スキニー</a></li>
-						<li><a href="/coordinate/?tag_ids=306">シンプル</a></li>
-						<li><a href="/coordinate/?tag_ids=1811">オーバーサイズ</a></li>
-						<li><a href="/coordinate/?tag_ids=340262">げんじ撮り</a></li>
-						<li><a href="/coordinate/?tag_ids=821">スラックス</a></li>
-						<li><a href="/coordinate/?tag_ids=7503">春コーデ</a></li>
-						<li><a href="/coordinate/?tag_ids=6598">スキニーデニム</a></li>
-						<li><a href="/coordinate/?tag_ids=1578">レイヤードスタイル</a></li>
-						<li><a href="/coordinate/?tag_ids=233">スニーカー</a></li>
-					</ul>
-				</div>
-			<!-- /#related_content --></div>
-			
-		<!-- /#content --></div>
+				<div id="related_content">
+				
+					<div class="link_list tag">
+						<h3 class="tit">高橋愛がよく使用するタグからコーディネートを探す</h3>
+						<ul class="clearfix">
+							<li><a href="/coordinate/?tag_ids=14091">高橋愛</a></li>
+							<li><a href="/coordinate/?tag_ids=175982">今日のたかはし</a></li>
+							<li><a href="/coordinate/?tag_ids=238">デニム</a></li>
+							<li><a href="/coordinate/?tag_ids=10002">低身長</a></li>
+							<li><a href="/coordinate/?tag_ids=23965">オトナカジュアル</a></li>
+							<li><a href="/coordinate/?tag_ids=1838">大人カジュアル</a></li>
+							<li><a href="/coordinate/?tag_ids=698">UNIQLO</a></li>
+							<li><a href="/coordinate/?tag_ids=11367">カジュアルコーデ</a></li>
+							<li><a href="/coordinate/?tag_ids=668">American Apparel</a></li>
+							<li><a href="/coordinate/?tag_ids=686">H&amp;M</a></li>
+						</ul>
+					</div>
+				
+					<div class="link_list">
+						<h3 class="tit">高橋愛がよく着用するアイテムからコーディネートを探す</h3>
+						<ul class="clearfix">
+							<li><a href="/brand/converse/shoes/sneakers/">CONVERSEのスニーカー</a></li>
+							<li><a href="/brand/drmartens/shoes/boots/">Dr.Martensのブーツ</a></li>
+							<li><a href="/brand/onitsukatiger/shoes/sneakers/">ONITSUKA TIGERのスニーカー</a></li>
+							<li><a href="/brand/newera/hat/cap/">NEW ERAのキャップ</a></li>
+							<li><a href="/brand/nike/shoes/sneakers/">NIKEのスニーカー</a></li>
+							<li><a href="/brand/haco/onepiece/onepiece-dress/">haco!のワンピース</a></li>
+							<li><a href="/brand/americanapparel/pants/denim-pants/">American Apparelのデニムパンツ</a></li>
+							<li><a href="/brand/maisonmargiela/shoes/boots/">Maison Margielaのブーツ</a></li>
+							<li><a href="/brand/onitsukatiger-andreapompilio/shoes/sneakers/">Onitsuka Tiger × ANDREA POMPILIOのスニーカー</a></li>
+							<li><a href="/brand/reebok/shoes/sneakers/">Reebokのスニーカー</a></li>
+						</ul>
+					</div>
+				
+				<!-- /#related_content --></div>
+				
+			<!-- /#content --></div>
+		
 	<!-- /#gbl_body --></div>
 
 </article>
