@@ -60,12 +60,20 @@
 							</li>
 							<li class="clearfix required">
 								<div class="sub">
+									<p>ユーザーID</p>
+								</div>
+								<div class="main">
+									<%= f.text_field :user_id%>
+								</div>
+							</li>
+							<li class="clearfix required">
+								<div class="sub">
 									<p>メールアドレス</p>
 								</div>
 								<div class="main">
 									<%= f.text_field :email%>
 								</div>
-							</li>
+							</li>							
 							<li class="clearfix">
 								<div class="sub">
 									<p>性別</p>
@@ -76,7 +84,14 @@
 									</p>
 								</div>
 							</li>
-	
+							<li class="clearfix required">
+								<div class="sub">
+									<p>生年月日</p>
+								</div>
+								<div class="main">
+									<%= f.date_select( :birth_day)%>
+								</div>
+							</li>	
 							<li class="place clearfix">
 								<div class="sub">
 									<p>地域</p>

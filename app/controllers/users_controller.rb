@@ -20,12 +20,13 @@ class UsersController < ApplicationController
   end
   
   def edit
-    @user = User.find(params[:id])
+    @user = User.find_by(user_id: params[:id])
   end
   
   def show
-    @user = User.find(params[:id])
-    @microposts = @user.microposts
+    @user = User.find_by(user_id: params[:id])
+    user_id = @user.id
+    @microposts = Micropost.where("id=#{user_id}")
     if current_user ==  @user then
       redirect_to  controller: :users, action: :my_page
     end
@@ -38,7 +39,7 @@ class UsersController < ApplicationController
   end
   
   def update
-    @user = User.find(params[:id])
+    @user = User.find_by(name: params[:id])
     if @user.update_attributes(user_params)
       # 更新に成功した場合を扱う。
       flash[:success] = "プロフィールの更新が完了しました。"
@@ -51,8 +52,9 @@ class UsersController < ApplicationController
   end
   
   def user_params
-    params.require(:user).permit(:name, :email , :region, :age, :sex,
-                                 :password,  :password_confirmation)
+    params.require(:user).permit(:name, :user_id, :email, :user_image,
+                                :birth_day, :region, :age, :sex,
+                                :password,  :password_confirmation)
   end
   
   def user_search_params

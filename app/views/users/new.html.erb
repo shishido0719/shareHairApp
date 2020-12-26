@@ -28,12 +28,10 @@
 					<div class="section_container">
 						
 						<div class="input">
-							<p class=""><%= f.text_field :name ,:placeholder => "ユーザー名"%></p>
-							
+							<p class=""><%= f.text_field :name ,:placeholder => "名前"%></p>
+							<p class=""><%= f.text_field :user_id,:placeholder => "ユーザーID"%></p>
 							<p class=""><%= f.text_field :email,:placeholder => "メールアドレス"%></p>
-							
 							<p class=""><%= f.text_field :password,:placeholder => "パスワード"%></p>
-							
 							<p class=""><%= f.password_field :password_confirmation,:placeholder => "確認用パスワード"%></p>
 							
 							

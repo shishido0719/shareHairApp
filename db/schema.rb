@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_07_104607) do
+ActiveRecord::Schema.define(version: 2020_12_22_111107) do
 
   create_table "microposts", force: :cascade do |t|
     t.text "content"
@@ -32,6 +32,9 @@ ActiveRecord::Schema.define(version: 2020_07_07_104607) do
     t.string "sex"
     t.string "password_digest"
     t.string "remember_digest"
+    t.string "user_id"
+    t.string "user_image"
+    t.date "birth_day"
   end
 
 end

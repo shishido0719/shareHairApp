@@ -8,8 +8,9 @@ Rails.application.routes.draw do
   delete '/logout',  to: 'sessions#destroy'
   get    '/user/search',   to: 'users#search'
   get    '/my_page',   to: 'users#my_page' 
-  get    '/user/show',   to: 'users#show'
-  resources :users 
+  resources :users ,only: [:index, :new, :create]
+  resources :users, path: '/', only: [:show, :edit, :update, :destroy]
+  # resources :users, only: :show, param: :name
   resources :microposts         
   
 end

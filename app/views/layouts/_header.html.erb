@@ -16,7 +16,7 @@
 					<div class="trigger">
 						<p class="clearfix">
 						<% if logged_in? %>
-							<%= link_to image_tag("//cdn.wimg.jp/content/no_image/profile/nu_80.gif",width: '30',height: '30', alt: "ssdさんのプロフィール画像"),user_path(current_user) %>
+							<%= link_to image_tag("//cdn.wimg.jp/content/no_image/profile/nu_80.gif",width: '30',height: '30', alt: "ssdさんのプロフィール画像"),'/my_page' %>
 							<span class="name"><%=current_user.name%></span>
 						<% else %>
 							<%= link_to image_tag("//cdn.wimg.jp/content/no_image/profile/nu_80.gif",width: '30',height: '30', alt: "ssdさんのプロフィール画像"),login_path %>
