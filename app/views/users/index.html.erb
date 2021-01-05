@@ -2,439 +2,285 @@
 
 <article id="gbl_main">
 
-<div id="switch_content_type_index">
-	<nav>
-		<ul class="clearfix">
-			<li><a href="/coordinate/">コーディネート</a></li>
-			<li class="current"><a href="/user/">ユーザー</a></li>
-			<li><a href="/item/">アイテム</a></li>
-			<li><a href="/shop/">ショップ</a></li>
-		</ul>
-	</nav>
-</div>
-
-<header id="gbl_title_index">
-	<div id="gbl_title_container" class="clearfix">
-		<nav id="bread">
-			<ol>
-				<li><a href="/"><span>WEAR</span></a></li>
+	<div id="switch_content_type_index">
+		<nav>
+			<ul class="clearfix">
+				<li><a href="/coordinate/">コーディネート</a></li>
+				<li class="current"><a href="/user/">ユーザー</a></li>
+				<li><a href="/item/">アイテム</a></li>
+				<li><a href="/shop/">ショップ</a></li>
+			</ul>
+		</nav>
+	<!-- /#switch_content_type_index --></div>
+	
+	<header id="gbl_title_user_index">
+		<div id="gbl_title_container" class="clearfix">
+			<nav id="bread">
+				<ol>
+					<li><a href="/"><span>WEAR</span></a></li>
 					<li>ユーザー一覧</li>
-			</ol>
-		<!-- /#bread --></nav>
-		
-		<div id="numberTit" class="title_container clearfix">
-			<div class="main">
-				<h1 class="tit">ユーザー一覧</h1>
-			</div>
-			<div class="sub clearfix">
-				<div class="container">
-					<h2 class="result_num"><span class="num"><%= @users.count%></span><span class="txt">件</span></h2>
+				</ol>
+			<!-- /#bread --></nav>
+			
+			<div id="numberTit" class="title_container clearfix">
+				<div class="main">
+					<h1 class="tit">ユーザー一覧</h1>
+				</div>
+				<div class="sub clearfix">
+					<div class="container">
+						<h2 class="result_num"><span class="num"><%= @users.count%></span><span class="txt">件</span></h2>
+					</div>
 				</div>
 			</div>
+			
 		</div>
-	</div>
-</header>
+	<!-- /#gbl_title_user_index --></header>
+	
+	<div id="gbl_body_user_index" class="clearfix">
+		<div id="content">
+			
+			<div class="pulldownWrapper">
+				<p class="pulldownParent"><a href="javascript:void(0);" class="icon_font over">人気順</a></p>
+				<div class="pulldownChild clearfix" style="width: 112px;">
+					<ul>
+						<li data-triggertxt="人気順" class="selected"><a href="/user/">人気順</a></li>
+						<li data-triggertxt="新着順"><a href="/user/?type_id=2">新着順</a></li>
+					</ul>
+				</div>
+			<!-- /.pulldownWrapper --></div>
 
-<div id="gbl_body_user_index" class="clearfix" style="min-height: 4654px;">
-	<div id="content">
-		
-		
-		<div class="pulldownWrapper">
-			<p class="pulldownParent"><a href="javascript:void(0);" class="icon_font over">人気順</a></p>
-			<div class="pulldownChild clearfix" style="width: 112px;">
-				<ul>
-					<li data-triggertxt="人気順" class="selected"><a href="/user/">人気順</a></li>
-					<li data-triggertxt="新着順"><a href="/user/?type_id=2">新着順</a></li>
-				</ul>
-			</div>
-		</div>
-		
-
-		<section id="search_result">
-		
-			<div id="list_1column">
-			<ul>
-			<% @users.each do |user| %>
-					<li class="list">
-						<div class="main clearfix">
-							<div class="img_box">
-								<p class="img"><a href="/fwafwa7/" class="over"><img src="//cdn.wimg.jp/profile/z7v8tq/20200513014207507_80.jpg" srcset="//cdn.wimg.jp/profile/z7v8tq/20200513014207507_200.jpg 2x" alt="きりまる" width="70" height="70"></a></p>
-							</div>
-							<div class="content">
-								<h3 class="name"><%= link_to user.name , user_path(user) %></h3>
+			<section id="search_result">
+				<div id="list_1column">
+					<ul>
+						<% @users.each do |user| %>
+							<li class="list">
+								<div class="main clearfix">
+									<div class="img_box">
+										<p class="img"><a href="/fwafwa7/" class="over"><img src="//cdn.wimg.jp/profile/z7v8tq/20200513014207507_80.jpg" srcset="//cdn.wimg.jp/profile/z7v8tq/20200513014207507_200.jpg 2x" alt="きりまる" width="70" height="70"></a></p>
+									</div>
+									<div class="content">
+										<h3 class="name"><%= link_to user.name , user_path(user) %></h3>
+										<ul class="info clearfix">
+											<li><%= user.email %></li>
+											<li>154cm</li>
+											<li><%= user.sex %></li>
+											<li>ミディアムヘアー</li>
+										</ul>
+										
+										<ul class="meta clearfix">
+											<li><a href="/fwafwa7/"><span>16</span>コーディネート</a></li>
+											<li><a href="/fwafwa7/follower/"><span>61302</span>フォロワー</a></li>
+										</ul>
+										
+										<div class="fav_brand link_list">
+											<h4 class="txt">よく着用するブランド</h4>
+											<ul class="clearfix">
+												<li><a href="/brand/converse/">CONVERSE</a></li>
+												<li><a href="/brand/mystic/">mystic</a></li>
+												<li><a href="/brand/kastane/">Kastane</a></li>
+											</ul>
+										</div>
+									
+									<!-- /.content --></div>
+								<!-- /.main --></div>
 								
-								<ul class="info clearfix">
-									<li><%= user.email %></li>
-									<li>154cm</li>
-									<li><%= user.sex %></li>
-									<li>ミディアムヘアー</li>
-								</ul>
-								
-								<ul class="meta clearfix">
-									<li><a href="/fwafwa7/"><span>16</span>コーディネート</a></li>
-									<li><a href="/fwafwa7/follower/"><span>61302</span>フォロワー</a></li>
-								</ul>
-								
-								<div class="fav_brand link_list">
-									<h4 class="txt">よく着用するブランド</h4>
-									<ul class="clearfix">
-										<li><a href="/brand/converse/">CONVERSE</a></li>
-										<li><a href="/brand/mystic/">mystic</a></li>
-										<li><a href="/brand/kastane/">Kastane</a></li>
-									</ul>
+								<div class="sub btn_block">
+									<div class="btn_follow">
+										<p class="btn" data-memberid="5690494" data-username="fwafwa7" data-changetxt="フォロー中"><a href="/member/login.html?bkurl=%2Fuser%2F" class="icon_font over"><span class="txt">フォローする</span></a></p>
+										<input type="hidden" id="follow_user" value="USQYQOZMRAVMAGWU">
+										<input type="hidden" id="follow_account" value="USQYQOZM20200702213953679">
+									<!-- /.btn_follow --></div>
 								</div>
-							</div>
-						</div>
-						<div class="sub btn_block">
-							
-						<div class="btn_follow">
-							<p class="btn" data-memberid="5690494" data-username="fwafwa7" data-changetxt="フォロー中"><a href="/member/login.html?bkurl=%2Fuser%2F" class="icon_font over"><span class="txt">フォローする</span></a></p>
-							<input type="hidden" id="follow_user" value="USQYQOZMRAVMAGWU">
-							<input type="hidden" id="follow_account" value="USQYQOZM20200702213953679">
-						<!-- /.btn_follow --></div>
-					</div>
-				</li>
-			<% end %>
+								
+							</li>
+						<% end %>
+					</ul>
+				<!-- /#list_1column --></div>
+			<!-- /#search_result --></section>
 			
+			<div id="pager_container" class="clearfix">
+				<div id="pager" class="clearfix">
+					<p class="prev"><span class="icon_font">PREV</span></p>
+					<ul class="clearfix">
+						<li><strong>1</strong></li>
+						<li><a href="/user/?pageno=2">2</a></li>
+						<li><a href="/user/?pageno=3">3</a></li>
+						<li><a href="/user/?pageno=4">4</a></li>
+						<li><a href="/user/?pageno=5">5</a></li>
+						<li class="doted">...</li>
+						<li><a href="/user/?pageno=500">500</a></li>
+					</ul>
+					<p class="next"><a href="/user/?pageno=2" class="icon_font">NEXT</a></p>
+				<!-- /#pager --></div>
+			<!-- /#pager_container --></div>
+	
+			<div id="related_content">
+				<section id="popular_tag" data-sexid="" data-countryid="" class="link_list tag">
+					<h3 class="tit">人気のタグからコーディネートを探す</h3>
+					<div class="data"><ul class="clearfix"><li><a href="/coordinate/?tag_ids=302">カジュアル</a></li><li><a href="/coordinate/?tag_ids=9134">夏コーデ</a></li><li><a href="/coordinate/?tag_ids=10459">ラフコーデ</a></li><li><a href="/coordinate/?tag_ids=12705">ゆるコーデ</a></li><li><a href="/coordinate/?tag_ids=5104">ラフスタイル</a></li><li><a href="/coordinate/?tag_ids=6092">大人女子</a></li><li><a href="/coordinate/?tag_ids=3411">サンダル</a></li><li><a href="/coordinate/?tag_ids=6620">ロングワンピース</a></li><li><a href="/coordinate/?tag_ids=5102">きれいめカジュアル</a></li><li><a href="/coordinate/?tag_ids=12295">ママコーデ</a></li></ul></div>
+				</section>
+				<section id="popular_brand" data-sexid="" data-countryid="" class="link_list">
+					<h3 class="tit">よく着用されるブランドからコーディネートを探す</h3>
+					<div class="data"><ul class="clearfix"><li><a href="/brand/uniqlo/">UNIQLO</a></li><li><a href="/brand/gu/">GU</a></li><li><a href="/brand/converse/">CONVERSE</a></li><li><a href="/brand/wego/">WEGO</a></li><li><a href="/brand/nike/">NIKE</a></li><li><a href="/brand/adidas/">adidas</a></li><li><a href="/brand/zara/">ZARA</a></li><li><a href="/brand/hm/">H&amp;M</a></li></ul></div>
+				</section>
+				<section id="popular_user" data-sexid="" data-countryid="" class="link_list">
+					<h3 class="tit">人気のユーザーからコーディネートを探す</h3>
+					<div class="data"><ul class="clearfix"><li><a href="/erikori/">erimomo</a></li><li><a href="/tinyworld/">tinyworld</a></li><li><a href="/spick240/">moe</a></li><li><a href="/mojakuma1014/">東端</a></li><li><a href="/taktaksugura16/">tak</a></li><li><a href="/syr95ymgc/">やまぐちさゆり</a></li><li><a href="/norisanchi710/">norisanchi710 </a></li><li><a href="/fujiaya13/">FUJIMOTO AYA</a></li></ul></div>
+				</section>
+			<!-- /#related_content --></div>
+	
+		<!-- /#content --></div>
+	
+	<div id="control_panel" class="">
+		<nav>
+			<%= form_with(scope: :search, url: users_path, method: :get, local: true) do |f| %>
+
+			<section class="saerch">
+				<ul>
+				  <li><a><%= f.submit "検索"%></a></li>
 				</ul>
-			</div>
+			<!-- /.user_name --></section>
 			
-		
-		</section>
-
-		
-<div id="pager_container" class="clearfix">
-	<div id="pager" class="clearfix">
-
-		<p class="prev"><span class="icon_font">PREV</span></p>
-
-		<ul class="clearfix">
-
-			<li><strong>1</strong></li>
-
-			<li><a href="/user/?pageno=2">2</a></li>
-
-			<li><a href="/user/?pageno=3">3</a></li>
-
-			<li><a href="/user/?pageno=4">4</a></li>
-
-			<li><a href="/user/?pageno=5">5</a></li>
-
-			<li class="doted">...</li>
-
-			<li><a href="/user/?pageno=500">500</a></li>
-
-		</ul>
-
-		<p class="next"><a href="/user/?pageno=2" class="icon_font">NEXT</a></p>
-
-	<!-- /#pager --></div>
-<!-- /#pager_container --></div>
-
-
-		
-
-<div id="related_content">
-	
-	
-	<section id="popular_tag" data-sexid="" data-countryid="" class="link_list tag">
-		<h3 class="tit">人気のタグからコーディネートを探す</h3>
-		<div class="data"><ul class="clearfix"><li><a href="/coordinate/?tag_ids=302">カジュアル</a></li><li><a href="/coordinate/?tag_ids=9134">夏コーデ</a></li><li><a href="/coordinate/?tag_ids=10459">ラフコーデ</a></li><li><a href="/coordinate/?tag_ids=12705">ゆるコーデ</a></li><li><a href="/coordinate/?tag_ids=5104">ラフスタイル</a></li><li><a href="/coordinate/?tag_ids=6092">大人女子</a></li><li><a href="/coordinate/?tag_ids=3411">サンダル</a></li><li><a href="/coordinate/?tag_ids=6620">ロングワンピース</a></li><li><a href="/coordinate/?tag_ids=5102">きれいめカジュアル</a></li><li><a href="/coordinate/?tag_ids=12295">ママコーデ</a></li></ul></div>
-	</section>
-	
-	
-	<section id="popular_brand" data-sexid="" data-countryid="" class="link_list">
-		<h3 class="tit">よく着用されるブランドからコーディネートを探す</h3>
-		<div class="data"><ul class="clearfix"><li><a href="/brand/uniqlo/">UNIQLO</a></li><li><a href="/brand/gu/">GU</a></li><li><a href="/brand/converse/">CONVERSE</a></li><li><a href="/brand/wego/">WEGO</a></li><li><a href="/brand/nike/">NIKE</a></li><li><a href="/brand/adidas/">adidas</a></li><li><a href="/brand/zara/">ZARA</a></li><li><a href="/brand/hm/">H&amp;M</a></li></ul></div>
-	</section>
-	
-	<section id="popular_user" data-sexid="" data-countryid="" class="link_list">
-		<h3 class="tit">人気のユーザーからコーディネートを探す</h3>
-		<div class="data"><ul class="clearfix"><li><a href="/erikori/">erimomo</a></li><li><a href="/tinyworld/">tinyworld</a></li><li><a href="/spick240/">moe</a></li><li><a href="/mojakuma1014/">東端</a></li><li><a href="/taktaksugura16/">tak</a></li><li><a href="/syr95ymgc/">やまぐちさゆり</a></li><li><a href="/norisanchi710/">norisanchi710 </a></li><li><a href="/fujiaya13/">FUJIMOTO AYA</a></li></ul></div>
-	</section>
-	
-</div>
-
-		
-<div id="ftrAdRectangle">
-	<div class="cnt left">
-		<div id="adContentBottomLeft"></div>
-	</div>
-	<div class="cnt right">
-		<div id="adContentBottomRight"></div>
-	</div>
-</div>
-
-	</div>
-
-<div id="control_panel" class="">
-	<nav>
-		<%= form_with(scope: :search, url: users_path, method: :get, local: true) do |f| %>
-		
-
-		
-		<section class="sex">
-			<h3 class="title">性別</h3>
-			<ul>
-					<li><%= f.submit "検索"%></li>
+			<section class="user_name">
+				<h3 class="title">ユーザー名</h3>
+				<ul>
+				  <li><%= f.text_field :name, value: @search_params[:name]%></li>
+				</ul>
+			<!-- /.user_name --></section>	
+			
+			<section class="sex">
+				<h3 class="title">性別</h3>
+				<ul>
 					<li><%= f.radio_button :sex, "" %>ALL</li>
 					<li><%= f.radio_button :sex, "1" ,checked:'1'==@search_params[:sex] %>MAN</li>
 					<li><%= f.radio_button :sex, "2" ,checked:'2'==@search_params[:sex] %>WOMAN</li>
-				  <li><%= f.text_field :name, value: @search_params[:name]%></li>
-			</ul>
-		</section>
-		
-
-		
-		<section class="user_type">
-			<h3 class="tit">ユーザータイプ</h3>
-			<div class="flyout_container line_none">
-				<div class="flyout">
-					<ul class="parent">
-						<li class="parent">
-							<p class="trigger"><a href="javascript:void(0);" class="icon_font">ALL</a></p>
-							<div class="detail">
-								<ul>
-									<li class="current"><a href="/user/">ALL</a></li>
-									<li><a href="/user/?user_type=1">SHOP STAFF</a></li>
-									<li><a href="/user/?user_type=2">WEARISTA</a></li>
-									<li><a href="/user/?user_type=3">OTHERS</a></li>
-								</ul>
-							</div>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</section>
-		
-		<section class="other">
-			<h3 class="tit">その他</h3>
-			<div class="flyout_container">
-				
-				<div class="height">
+				</ul>
+			<!-- /.sex --></section>
+			
+			<section class="user_type">
+				<h3 class="tit">ユーザータイプ</h3>
+				<div class="flyout_container line_none">
 					<div class="flyout">
 						<ul class="parent">
 							<li class="parent">
-								<p class="trigger"><a href="/user/" class="icon_font">身長</a></p>
+								<p class="trigger"><a href="javascript:void(0);" class="icon_font">ALL</a></p>
 								<div class="detail">
 									<ul>
 										<li class="current"><a href="/user/">ALL</a></li>
-				
-										<li><a href="/user/?to_height=100">100cm以下</a></li>
-				
-										<li><a href="/user/?from_height=101&amp;to_height=110">101cm～110cm</a></li>
-				
-										<li><a href="/user/?from_height=111&amp;to_height=120">111cm～120cm</a></li>
-				
-										<li><a href="/user/?from_height=121&amp;to_height=130">121cm～130cm</a></li>
-				
-										<li><a href="/user/?from_height=131&amp;to_height=140">131cm～140cm</a></li>
-				
-										<li><a href="/user/?from_height=141&amp;to_height=150">141cm～150cm</a></li>
-				
-										<li><a href="/user/?from_height=151&amp;to_height=160">151cm～160cm</a></li>
-				
-										<li><a href="/user/?from_height=161&amp;to_height=170">161cm～170cm</a></li>
-				
-										<li><a href="/user/?from_height=171&amp;to_height=180">171cm～180cm</a></li>
-				
-										<li><a href="/user/?from_height=181&amp;to_height=190">181cm～190cm</a></li>
-				
-										<li><a href="/user/?from_height=191">191cm以上</a></li>
-				
+										<li><a href="/user/?user_type=1">SHOP STAFF</a></li>
+										<li><a href="/user/?user_type=2">WEARISTA</a></li>
+										<li><a href="/user/?user_type=3">OTHERS</a></li>
 									</ul>
 								</div>
 							</li>
 						</ul>
 					</div>
-				
 				</div>
-				
-
-				
-				<div class="age">
-					<div class="flyout">
-						<ul class="parent">
-							<li class="parent">
-								<p class="trigger"><a href="/user/" class="icon_font">年齢</a></p>
-								<div class="detail">
-									<ul>
-										<li class="current"><a href="/user/">ALL</a></li>
-				
-										<li><a href="/user/?to_age=9">9歳以下</a></li>
-				
-										<li><a href="/user/?from_age=10&amp;to_age=14">10歳～14歳</a></li>
-				
-										<li><a href="/user/?from_age=15&amp;to_age=19">15歳～19歳</a></li>
-				
-										<li><a href="/user/?from_age=20&amp;to_age=24">20歳～24歳</a></li>
-				
-										<li><a href="/user/?from_age=25&amp;to_age=29">25歳～29歳</a></li>
-				
-										<li><a href="/user/?from_age=30&amp;to_age=34">30歳～34歳</a></li>
-				
-										<li><a href="/user/?from_age=35&amp;to_age=39">35歳～39歳</a></li>
-				
-										<li><a href="/user/?from_age=40&amp;to_age=44">40歳～44歳</a></li>
-				
-										<li><a href="/user/?from_age=45&amp;to_age=49">45歳～49歳</a></li>
-				
-										<li><a href="/user/?from_age=50&amp;to_age=54">50歳～54歳</a></li>
-				
-										<li><a href="/user/?from_age=55&amp;to_age=59">55歳～59歳</a></li>
-				
-										<li><a href="/user/?from_age=60&amp;to_age=64">60歳～64歳</a></li>
-				
-										<li><a href="/user/?from_age=65&amp;to_age=69">65歳～69歳</a></li>
-				
-										<li><a href="/user/?from_age=70&amp;to_age=74">70歳～74歳</a></li>
-				
-										<li><a href="/user/?from_age=75&amp;to_age=79">75歳～79歳</a></li>
-				
-										<li><a href="/user/?from_age=80&amp;to_age=84">80歳～84歳</a></li>
-				
-										<li><a href="/user/?from_age=85&amp;to_age=89">85歳～89歳</a></li>
-				
-										<li><a href="/user/?from_age=90&amp;to_age=94">90歳～94歳</a></li>
-				
-										<li><a href="/user/?from_age=95&amp;to_age=99">95歳～99歳</a></li>
-				
-										<li><a href="/user/?from_age=100">100歳以上</a></li>
-				
-									</ul>
-								</div>
-							</li>
-						</ul>
-					</div>
-				
+			<!-- /.user_type --></section>
+			
+			<section class="brand" data-currenturl="?p_sexname=men&amp;user_type=1">
+				<h3 class="tit">ブランド</h3>
+				<div class="select_overlay" data-orcontainer="brand_overlay">
+					<p class="trigger clearfix"><a href="javascript:void(0);">ブランドを選択する</a></p>
 				</div>
-				
-
-				
-				<div class="hair">
-					<div class="flyout">
-						<ul class="parent">
-							<li class="parent">
-								<p class="trigger"><a href="/user/" class="icon_font">髪型</a></p>
-								<div class="detail">
-									<ul>
-										<li class="current"><a href="/user/">ALL</a></li>
-				
-										<li><a href="/user/?hairstyle_id=1">ロングヘアー</a></li>
-				
-										<li><a href="/user/?hairstyle_id=2">スーパーロングヘアー</a></li>
-				
-										<li><a href="/user/?hairstyle_id=3">セミロングヘアー</a></li>
-				
-										<li><a href="/user/?hairstyle_id=4">ミディアムヘアー</a></li>
-				
-										<li><a href="/user/?hairstyle_id=5">ショートヘアー</a></li>
-				
-										<li><a href="/user/?hairstyle_id=6">ベリーショートヘアー</a></li>
-				
-										<li><a href="/user/?hairstyle_id=7">ボウズ</a></li>
-				
-										<li><a href="/user/?hairstyle_id=8">アシンメトリー</a></li>
-				
-										<li><a href="/user/?hairstyle_id=9">アフロ</a></li>
-				
-										<li><a href="/user/?hairstyle_id=10">2ブロック</a></li>
-				
-										<li><a href="/user/?hairstyle_id=11">モヒカン</a></li>
-				
-										<li><a href="/user/?hairstyle_id=12">編みこみ</a></li>
-				
-										<li><a href="/user/?hairstyle_id=13">コーンロウ</a></li>
-				
-										<li><a href="/user/?hairstyle_id=14">ドレッド</a></li>
-				
-									</ul>
-								</div>
-							</li>
-						</ul>
-					</div>
-				
-				</div>
-				
-
-				<div class="region">
+			</section>
+			
+			<section class="other">
+				<h3 class="tit">その他</h3>
+				<div class="flyout_container">
 					
-					<div class="flyout">
-						<ul class="parent">
-							<li class="parent">
-								<p class="trigger"><a href="/user/" class="icon_font">地域</a></p>
-								<div class="detail">
-									<ul>
-										<li class="current"><a href="/user/">ALL</a></li>
-					
-										<li><a href="/user/?country_id=1">日本</a></li>
-					
-										<li><a href="/user/?country_id=2">アメリカ</a></li>
-					
-										<li><a href="/user/?country_id=4">韓国</a></li>
-					
-										<li><a href="/user/?country_id=5">台湾</a></li>
-					
-										<li><a href="/user/?country_id=6">ニュージーランド</a></li>
-					
-										<li><a href="/user/?country_id=7">インドネシア</a></li>
-					
-										<li><a href="/user/?country_id=9">カナダ</a></li>
-					
-										<li><a href="/user/?country_id=11">オーストラリア</a></li>
-					
-										<li><a href="/user/?country_id=12">香港</a></li>
-					
-										<li><a href="/user/?country_id=13">中国大陸</a></li>
-					
-										<li><a href="/user/?country_id=14">シンガポール</a></li>
-					
-										<li><a href="/user/?country_id=15">マレーシア</a></li>
-					
-										<li><a href="/user/?country_id=16">タイ</a></li>
-					
-										<li><a href="/user/?country_id=17">フィリピン</a></li>
-					
-										<li><a href="/user/?country_id=18">ベトナム</a></li>
-					
-										<li><a href="/user/?country_id=19">インド</a></li>
-					
-										<li><a href="/user/?country_id=24">ブラジル</a></li>
-					
-										<li><a href="/user/?country_id=25">ロシア</a></li>
-					
-										<li><a href="/user/?country_id=26">メキシコ</a></li>
-					
-									</ul>
-								</div>
-							</li>
-						</ul>
+					<div class="height">
+						<div class="flyout">
+							<ul class="parent">
+								<li class="parent">
+									<p class="trigger"><a href="/user/" class="icon_font">身長</a></p>
+									<div class="detail">
+										<ul>
+											<li class="current"><a href="/user/">ALL</a></li>
+											<li><a href="/user/?from_height=121&amp;to_height=130">121cm～130cm</a></li>
+											<li><a href="/user/?from_height=131&amp;to_height=140">131cm～140cm</a></li>
+											<li><a href="/user/?from_height=141&amp;to_height=150">141cm～150cm</a></li>
+											<li><a href="/user/?from_height=151&amp;to_height=160">151cm～160cm</a></li>
+											<li><a href="/user/?from_height=161&amp;to_height=170">161cm～170cm</a></li>
+											<li><a href="/user/?from_height=171&amp;to_height=180">171cm～180cm</a></li>
+											<li><a href="/user/?from_height=181&amp;to_height=190">181cm～190cm</a></li>
+											<li><a href="/user/?from_height=191">191cm以上</a></li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</div>
 					</div>
 					
+					<div class="age">
+						<div class="flyout">
+							<ul class="parent">
+								<li class="parent">
+									<p class="trigger"><a href="/user/" class="icon_font">年齢</a></p>
+									<div class="detail">
+										<ul>
+											<li class="current"><a href="/user/">ALL</a></li>
+											<li><a href="/user/?to_age=9">9歳以下</a></li>
+											<li><a href="/user/?from_age=10&amp;to_age=14">10歳～14歳</a></li>
+											<li><a href="/user/?from_age=15&amp;to_age=19">15歳～19歳</a></li>
+											<li><a href="/user/?from_age=20&amp;to_age=24">20歳～24歳</a></li>
+											<li><a href="/user/?from_age=25&amp;to_age=29">25歳～29歳</a></li>
+											<li><a href="/user/?from_age=30&amp;to_age=34">30歳～34歳</a></li>
+											<li><a href="/user/?from_age=35&amp;to_age=39">35歳～39歳</a></li>
+											<li><a href="/user/?from_age=40&amp;to_age=44">40歳～44歳</a></li>
+											<li><a href="/user/?from_age=45&amp;to_age=49">45歳～49歳</a></li>
+											<li><a href="/user/?from_age=50&amp;to_age=54">50歳～54歳</a></li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				
+					<div class="hair">
+						<div class="flyout">
+							<ul class="parent">
+								<li class="parent">
+									<p class="trigger"><a href="/user/" class="icon_font">髪型</a></p>
+									<div class="detail">
+										<ul>
+											<li class="current"><a href="/user/">ALL</a></li>
+											<li><a href="/user/?hairstyle_id=1">ロングヘアー</a></li>
+											<li><a href="/user/?hairstyle_id=2">スーパーロングヘアー</a></li>
+											<li><a href="/user/?hairstyle_id=3">セミロングヘアー</a></li>
+											<li><a href="/user/?hairstyle_id=4">ミディアムヘアー</a></li>
+											<li><a href="/user/?hairstyle_id=5">ショートヘアー</a></li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					
+					<div class="region">
+						<div class="flyout">
+							<ul class="parent">
+								<li class="parent">
+									<p class="trigger"><a href="/user/" class="icon_font">地域</a></p>
+									<div class="detail">
+										<ul>
+											<li class="current"><a href="/user/">ALL</a></li>
+											<li><a href="/user/?country_id=1">日本</a></li>
+											<li><a href="/user/?country_id=2">アメリカ</a></li>
+											<li><a href="/user/?country_id=4">韓国</a></li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
 				</div>
-
-			</div>
-		</section>
+			<!-- /.other --></section>
+			
 		<% end %>
-
+		</nav>
 		
-		
-		<section class="magazine">
-			<h3 class="tit">お気に入り雑誌</h3>
-			<div class="select_overlay" data-orcontainer="magazine_overlay">
-		
-				<p class="trigger clearfix"><a href="javascript:void(0);">雑誌を選択する</a></p>
-			</div>
-		</section>
-		
-	</nav>
+	<!-- /#control_panel --></div>
 	
-	<div id="adLeftNav" class="adBanner adSmallSquare" data-google-query-id="CKruvKbLruoCFRZgvQodlR4DoA"><div id="google_ads_iframe_/21701332322/wear_pc_jp/pc_userlist_leftnavi_200x200_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/21701332322/wear_pc_jp/pc_userlist_leftnavi_200x200_0" title="3rd party ad content" name="google_ads_iframe_/21701332322/wear_pc_jp/pc_userlist_leftnavi_200x200_0" width="200" height="200" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" srcdoc="" style="border: 0px; vertical-align: bottom;" data-google-container-id="2" data-load-complete="true"></iframe></div></div>
-	
-</div>
-
-
-
-</div>
-
-</article>
+	<!-- /#gbl_body_user_index --></div>
+<!-- /#gbl_main --></article>

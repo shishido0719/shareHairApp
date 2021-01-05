@@ -6,20 +6,21 @@
 				<form id="gSearch_form" action="/" method="get" data-notxt="ワードを入力してください">
 					<p class="input"><span class="icon_font"><input type="text" autocomplete="off" placeholder="コーディネートやユーザーを探す" data-txtdefault="コーディネートやユーザーを探す" data-txtcoordinate="コーディネートを探す" data-txtuser="ユーザーを探す" data-txtitem="アイテムを探す" data-txtshop="ショップを探す" value=""></span></p>
 				</form>
-				<p class="moresearch"><a href="#" class="icon_font">条件を指定して検索</a></p>
 			<!-- /#hdr_search --></div>
 			
-			<h1 class="logo container-element"><%= link_to image_tag("wearLogo.png"),'/' %></h1>
+			<h1 class="logo container-element"><%= link_to image_tag("wearLogo.png",width: '135',height: '35'),'/' %></h1>
 			
 			<div class="mycontent container-element">
 				<div class="user">
 					<div class="trigger">
 						<p class="clearfix">
 						<% if logged_in? %>
-							<%= link_to image_tag("//cdn.wimg.jp/content/no_image/profile/nu_80.gif",width: '30',height: '30', alt: "ssdさんのプロフィール画像"),'/my_page' %>
-							<span class="name"><%=current_user.name%></span>
+							<a href='/my_page'>
+								<span class="img"><img src="//cdn.wimg.jp/content/no_image/profile/nu_80.gif" width='30' height='30', alt="ssdさんのプロフィール画像"></span>
+								<span class="name"><%=current_user.name%></span>
+							</a>
 						<% else %>
-							<%= link_to image_tag("//cdn.wimg.jp/content/no_image/profile/nu_80.gif",width: '30',height: '30', alt: "ssdさんのプロフィール画像"),login_path %>
+							<span class="img"><%= link_to image_tag("//cdn.wimg.jp/content/no_image/profile/nu_80.gif",width: '30',height: '30', alt: "ssdさんのプロフィール画像"),login_path %></span>
 							<span class="name">ログイン</span>
 						<% end %>
 						</p>
@@ -44,7 +45,7 @@
 				<% if logged_in? %>
 					<p class="logout"><%= link_to "ログアウト", logout_path, method: :delete %></p>
 				<% else %>
-					<p class="logout"><%= link_to "ログイン", login_path, method: :get %></p>
+					<p class="login"><%= link_to "ログイン", login_path, method: :get %></p>
 				<% end %>
 			<!-- /.user --></div>
 		<!-- /.container --></div>
