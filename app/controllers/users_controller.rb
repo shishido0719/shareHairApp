@@ -26,16 +26,16 @@ class UsersController < ApplicationController
   def show
     @user = User.find_by(user_id: params[:id])
     user_id = @user.id
-    @microposts = Micropost.where("id=#{user_id}")
+    @microposts = Micropost.where("user_id=#{user_id}")
     if current_user ==  @user then
       redirect_to  controller: :users, action: :my_page
     end
-      
   end
   
   def my_page
     @user = current_user
-    @microposts = @user.microposts
+    user_id = @user.id
+    @microposts = Micropost.where("user_id=#{user_id}")
   end
   
   def update

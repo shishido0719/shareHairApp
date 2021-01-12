@@ -336,7 +336,7 @@ nav{
     margin: 0 auto 0 auto;
     position: relative;
     .user {
-      display: none;
+      // display: none;
       width: 200px;
       position: absolute;
       right: 56px;
@@ -1749,8 +1749,11 @@ nav{
       font-weight: bold;
       font-size: 15px;
       .btn a {
-        color: #333;
+        color: black;
         font-weight: bold;
+      }
+      .liked,a.liked:before{
+        color: red;
       }
       a:before {
         content: "";

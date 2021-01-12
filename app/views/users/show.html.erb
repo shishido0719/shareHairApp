@@ -125,11 +125,10 @@
 										<p class="btn "><a href="/member/login.html?bkurl=%2Ftakahashiai%2F" class="icon_font over"><span>28</span></a></p>
 										</div>
 									</li>
-									
 									<li class="like icon_font">
-										<div class="btn_like fn_btn" data-liketype="1" data-likeid="18281882" data-username="takahashiai" data-screenid="1" data-objectid="">
-											<p class="btn "><a href="/member/login.html?bkurl=%2Ftakahashiai%2F" class="icon_font over"><span>105</span></a></p>
-										<!-- /.btn_like --></div>
+  									<div id="like-btn-<%= micropost.id %>">
+											<%= render 'likes/like', micropost: micropost %>
+										</div>									
 									</li>
 								</ul>
 							</div>

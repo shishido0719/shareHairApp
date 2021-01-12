@@ -2,6 +2,8 @@ class User < ApplicationRecord
   
   attr_accessor :remember_token
   has_many :microposts, dependent: :destroy
+  has_many :likes, dependent: :destroy
+  has_many :liked_posts, through: :likes, source: :micropost
   
   enum sex: { unanswered: 0, male: 1, female: 2 }
   
