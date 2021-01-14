@@ -18,12 +18,16 @@
 				
 				<div id="user_sub">
 					<div class="image">
-						<p class="img"><img src="//cdn.wimg.jp/profile/x3s5ee/20200705085346207_200.jpg" srcset="//cdn.wimg.jp/profile/x3s5ee/20200705085346207_640.jpg 2x" alt="高橋愛" width="148" height="148"></p>
+						<p class="img">
+							<% if @user.user_image? %>
+								<%= image_tag @user.user_image.to_s ,size: '148x148'%></p>
+							<% else %>
+								<img src="//cdn.wimg.jp/content/no_image/profile/nu_80.gif" alt="ssd" width="148" height="148">
+						<% end %>
+						</p>
 					</div>
 					<div class="btn_follow">
 						<p class="btn" data-memberid="6853" data-username="takahashiai" data-changetxt="フォロー中"><a href="/member/login.html?bkurl=%2Ftakahashiai%2F" class="icon_font over"><span class="txt">フォローする</span></a></p>
-						<input type="hidden" id="follow_user" value="JVDCBTETQVDOOAEK">
-						<input type="hidden" id="follow_account" value="JVDCBTET20201212232245468">
 					<!-- /.btn_follow --></div>
 				<!-- /#user_sub --></div>
 			

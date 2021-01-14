@@ -28,10 +28,10 @@
 				</div>
 				<div class="sub clearfix">
 					<div class="container">
-						<h2 class="result_num"><span class="num">9,052,392</span><span class="txt">件</span></h2>
-					</div>
+						<h2 class="result_num"><span class="num"><%= @microposts.count %></span><span class="txt">件</span></h2>
 					</div>
 				</div>
+			</div>
 			</div>
 		</div>
 	</header>
@@ -58,7 +58,13 @@
 								<p><%= micropost.content %></p>
 								<div class="image">
 									<a href="/uethrnrk/17064097/" class="over" style="background-image: none;">
-										<p class="img"><img src="https://cdn.wimg.jp/coordinate/om5w7a/20200615192758316/20200615192758316_276.jpg" data-originalretina="//cdn.wimg.jp/coordinate/om5w7a/20200615192758316/20200615192758316_500.jpg" alt="nonさんの「フリルアシメブラウス（DHOLIC｜ディーホリック）」を使ったコーディネート" width="232" height="310" style="opacity: 1;"></p>
+										<p class="img">
+											<% if micropost.image? %>
+												<%= image_tag micropost.image.to_s ,size: '232x310'%></p>
+											<% else %>
+												<img src="//cdn.wimg.jp/content/no_image/profile/nu_80.gif" alt="ssd" width="232" height="310">
+											<% end %>											
+										</p>
 										<p class="show_dt icon_font">2020.6/15</p>
 									</a>
 								</div>
@@ -70,19 +76,11 @@
 										<li class="save icon_font">
 											<div class="btn_save fn_btn" data-savetype="coordinate" data-itemimageid="" data-saveid="17064097" data-elementid="" data-screenid="" data-objectid="">
 												<p class="btn "><a href="/member/login.html?bkurl=%2Fcoordinate%2F" class="icon_font over"><span>172</span></a></p>
-												<input type="hidden" id="fav_coordinate" value="WNXYOEJLISNSCNSM">
-												<input type="hidden" id="fav_snap" value="WNXYOEJL20200707175343257">
-												<input type="hidden" id="fav_item" value="">
-												<input type="hidden" id="fav_goods" value="">
 											</div>
 										</li>
 										<li class="like icon_font">
 											<div class="btn_like fn_btn" data-liketype="1" data-likeid="17064097" data-username="uethrnrk" data-screenid="" data-objectid="">
 												<p class="btn "><a href="/member/login.html?bkurl=%2Fcoordinate%2F" class="icon_font over"><span>286</span></a></p>
-												<input type="hidden" id="like_coordinate" value="WNXYOEJLISNSCNSM">
-												<input type="hidden" id="like_snap" value="WNXYOEJL20200707175343257">
-												<input type="hidden" id="like_item" value="">
-												<input type="hidden" id="like_goods" value="">
 											</div><!-- /.btn_like -->
 										</li>
 									</ul>
@@ -90,10 +88,16 @@
 							
 							<div class="profile clearfix">
 								<div class="sub">
-									<p class="img" style="background-image: none;"><a href="/uethrnrk/" class="over"><img src="https://cdn.wimg.jp/profile/om5w7a/20170821234823163_80.jpg" alt="nonさん" width="40" height="40" style="opacity: 1;"></a></p>
+									<p class="img" style="background-image: none;">
+										<% if micropost.user.user_image? %>
+											<%= image_tag micropost.user.user_image.to_s ,size: '40x40'%>
+										<% else %>
+											<img src="//cdn.wimg.jp/content/no_image/profile/nu_80.gif" alt="ssd" width="40" height="40">
+										<% end %>
+									</p>
 								</div>
 								<div class="main">
-									<p class="name clearfix type_on"><span class="namefirst">non</span><span class="icon_font user_type_ico small wearista"></span></p>
+									<p class="name clearfix type_on"><span class="namefirst"><%= micropost.user.name %></span><span class="icon_font user_type_ico small wearista"></span></p>
 									<p class="txt"><span class="height">160cm</span></p>
 								</div>
 							</div>

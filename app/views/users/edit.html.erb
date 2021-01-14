@@ -37,6 +37,18 @@
 					<% flash.each do |message_type, message| %>
 		        <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
 		      <% end %>
+
+					<h3>プロフィールに使用する画像を編集できます。</h3>
+		
+					<div id="img_box">
+						<p class="img"><img src="//wear.jp/img/icon/no_image/profile/nu_200.gif" alt="" width="200" height="200"></p>
+					<!-- /#img_box --></div>
+					<div id="upload" class="clearfix">
+						<p class="input over"><%= f.file_field :user_image %><span class="txt">写真をアップロード</span></p>
+						<p id="delete" class="over"><span>削除</span></p>
+						<p class="notes">推奨サイズ：横640px × 縦640px</p>
+					<!-- /#upload --></div>
+ 
 					<div id="basic_info" class="list">
 						<p class="tit">基本情報</p>
 						<ul>

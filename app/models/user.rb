@@ -5,6 +5,8 @@ class User < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :liked_posts, through: :likes, source: :micropost
   
+  mount_uploader :user_image, ImageUploader
+  
   enum sex: { unanswered: 0, male: 1, female: 2 }
   
   scope :search, -> (search_params) do      

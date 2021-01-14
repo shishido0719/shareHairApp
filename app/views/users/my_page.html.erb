@@ -17,7 +17,13 @@
 				
 				<div id="user_sub">
 					<div class="image">
-						<p class="img"><img src="//cdn.wimg.jp/content/no_image/profile/nu_200.gif" srcset="//cdn.wimg.jp/content/no_image/profile/nu_640.gif 2x" alt="ssd" width="148" height="148"></p>
+						<p class="img">
+							<% if @user.user_image? %>
+								<%= image_tag @user.user_image.to_s ,size: '148x148'%>
+							<% else %>
+								<img src="//cdn.wimg.jp/content/no_image/profile/nu_80.gif" alt="ssd" width="148" height="148">
+							<% end %>
+						</p>
 					</div>
 					<div class="btn_follow">
 						<p class="btn mypage"><%= link_to "プロフィール変更", edit_user_path(@user) %></p>
@@ -53,7 +59,6 @@
 		<div id="user_menu">
 			<nav class="clearfix">
 				
-
 				<div class="main">
 					<ul class="clearfix">
 						<li class="current"><a href="/member/" rel="nofollow"><%=@microposts.count %><span>コーディネート</span></a></li>

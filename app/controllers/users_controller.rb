@@ -39,7 +39,7 @@ class UsersController < ApplicationController
   end
   
   def update
-    @user = User.find_by(name: params[:id])
+    @user = User.find_by(user_id: params[:id])
     if @user.update_attributes(user_params)
       # 更新に成功した場合を扱う。
       flash[:success] = "プロフィールの更新が完了しました。"

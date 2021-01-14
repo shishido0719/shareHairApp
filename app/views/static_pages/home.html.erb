@@ -47,10 +47,20 @@
 								<!-- /.image_container --></div>
 								
 								<div class="profile clearfix">
-									
 									<div class="content clearfix">
+										<div class="sub">
+											<p class="img">
+												<a href="/fwafwa7/" class="over">
+													<% if micropost.user.user_image? %>
+														<%= image_tag micropost.user.user_image.to_s ,size: '32x32'%></p>
+													<% else %>
+														<img src="//cdn.wimg.jp/content/no_image/profile/nu_80.gif" alt="ssd" width="32" height="32">
+													<% end %>
+												</a>
+											</p>
+										</div>
 										<div class="main">
-											<p class="name clearfix"><span class="namefirst">Ns</span></p>
+											<p class="name clearfix"><span class="namefirst"><%= micropost.user.name %></span></p>
 											<p class="txt">166cm</p>
 										</div>
 									<!-- /.content --></div>
@@ -58,8 +68,6 @@
 									<div class="btn_block">
 										<div class="btn_follow">
 											<p class="btn" data-memberid="6906129" data-username="" data-changetxt="フォロー中"><a href="/member/login.html?bkurl=%2F%3F" class="icon_font over"><span class="txt">フォローする</span></a></p>
-											<input type="hidden" id="follow_user" value="EMFWDTKXVFLYKZJQ">
-											<input type="hidden" id="follow_account" value="EMFWDTKX20200614204205085">
 										<!-- /.btn_follow --></div>
 									<!-- /.btn_block --></div>
 									
@@ -79,31 +87,40 @@
 					</div>
 					
 					<ol class="clearfix">
-						<li>
-							<p class="rank">1</p>
-							<div class="image_container">
-								<p class="img"><a href="/fwafwa7/17056206/" class="over"><img src="//cdn.wimg.jp/coordinate/z7v8tq/20200614173534469/20200614173534469_320.jpg" srcset="//cdn.wimg.jp/coordinate/z7v8tq/20200614173534469/20200614173534469_500.jpg" alt="きりまるさんの「リブボートネックT（5分袖）（UNIQLO｜ユニクロ）」を使ったコーディネート" width="246" height="328"></a></p>
-							<!-- /.image_container --></div>
-							
-							<div class="profile clearfix">
-								<div class="content clearfix">
-									<div class="sub">
-										<p class="img"><a href="/fwafwa7/" class="over"><img src="//cdn.wimg.jp/profile/z7v8tq/20200513014207507_32.jpg" srcset="//cdn.wimg.jp/profile/z7v8tq/20200513014207507_80.jpg" alt="きりまるさん" width="32" height="32"></a></p>
+						<% @ranking_microposts.each do |ranking_micropost| %>
+		
+							<li>
+								<p class="rank">1</p>
+								<div class="image_container">
+									<p class="img"><%= link_to image_tag(ranking_micropost.image.to_s ,size: '200x200'),micropost_path(ranking_micropost)%></p>
+								<!-- /.image_container --></div>
+								
+								<div class="profile clearfix">
+									<div class="content clearfix">
+										<div class="sub">
+											<p class="img">
+												<a href="/fwafwa7/" class="over">
+													<% if ranking_micropost.user.user_image? %>
+														<%= image_tag ranking_micropost.user.user_image.to_s ,size: '32x32'%></p>
+													<% else %>
+														<img src="//cdn.wimg.jp/content/no_image/profile/nu_80.gif" alt="ssd" width="32" height="32">
+													<% end %>
+												</a>
+											</p>
+										</div>
+										<div class="main">
+											<p class="name clearfix"><span class="namefirst"><%= ranking_micropost.user.name %></span></p>
+											<p class="txt">154cm</p>
+										</div>
 									</div>
-									<div class="main">
-										<p class="name clearfix"><span class="namefirst">きりまる</span></p>
-										<p class="txt">154cm</p>
-									</div>
-								</div>
-								<div class="btn_block">
-									<div class="btn_follow">
-										<p class="btn" data-memberid="5690494" data-username="fwafwa7" data-changetxt="フォロー中"><a href="/member/login.html?bkurl=%2F%3F" class="icon_font over"><span class="txt">フォローする</span></a></p>
-										<input type="hidden" id="follow_user" value="EMFWDTKXVFLYKZJQ">
-										<input type="hidden" id="follow_account" value="EMFWDTKX20200614204205085">
-									<!-- /.btn_follow --></div>
-								<!-- /.btn_block --></div>
-							<!-- /.profile --></div>
-						</li>
+									<div class="btn_block">
+										<div class="btn_follow">
+											<p class="btn" data-memberid="5690494" data-username="fwafwa7" data-changetxt="フォロー中"><a href="/member/login.html?bkurl=%2F%3F" class="icon_font over"><span class="txt">フォローする</span></a></p>
+										<!-- /.btn_follow --></div>
+									<!-- /.btn_block --></div>
+								<!-- /.profile --></div>
+							</li>
+						<% end %>
 					</ol>
 					<p class="btn_more"><a href="/ranking/" class="over">もっと見る</a></p>
 				<!-- /.ranking --></section>
@@ -131,7 +148,11 @@
 						<li class="clearfix">
 							<div class="sub">
 								<p class="img">
-									<%= link_to image_tag("//cdn.wimg.jp/profile/kzighc/20170309105820975_200.jpg",width: '36',height: '36', alt: "プロフィール画像"),user_path(user) %>
+									<% if user.user_image? %>
+										<%= link_to image_tag(user.user_image.to_s,width: '36',height: '36', alt: "プロフィール画像"),user_path(user) %>
+									<% else %>
+										<%= link_to image_tag("//cdn.wimg.jp/content/no_image/profile/nu_80.gif",width: '36',height: '36', alt: "プロフィール画像"),user_path(user) %>
+									<% end %>	
 								</p>
 							</div>
 							<div class="main">
@@ -140,16 +161,6 @@
 							</div>
 						</li>
 					<% end %>
-				
-					<li class="clearfix">
-						<div class="sub">
-							<p class="img"><a href="/takahashiai/" class="over"><img src="//cdn.wimg.jp/profile/x3s5ee/20200506020910320_200.jpg" alt="ZETTOさん" width="36" height="36"></a></p>
-						</div>
-						<div class="main">
-							<p class="name clearfix type_on"><span class="namefirst">高橋愛</span><span class="icon_font user_type_ico small wearista"></span></p>
-							<p class="txt icon_font">2,504,965</p>
-						</div>
-					</li>
 
 				</ol>
 				<p class="btn_more"><a href="/ranking/user/" class="over">もっと見る</a></p>

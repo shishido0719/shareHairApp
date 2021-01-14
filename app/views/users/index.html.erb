@@ -56,7 +56,13 @@
 							<li class="list">
 								<div class="main clearfix">
 									<div class="img_box">
-										<p class="img"><a href="/fwafwa7/" class="over"><img src="//cdn.wimg.jp/profile/z7v8tq/20200513014207507_80.jpg" srcset="//cdn.wimg.jp/profile/z7v8tq/20200513014207507_200.jpg 2x" alt="きりまる" width="70" height="70"></a></p>
+										<p class="img">
+											<% if user.user_image? %>
+												<%= image_tag user.user_image.to_s ,size: '70x70'%>
+											<% else %>
+												<img src="//cdn.wimg.jp/content/no_image/profile/nu_80.gif" alt="ssd" width="70" height="70">
+											<% end %>
+										</p>
 									</div>
 									<div class="content">
 										<h3 class="name"><%= link_to user.name , user_path(user) %></h3>

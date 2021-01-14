@@ -16,7 +16,13 @@
 						<p class="clearfix">
 						<% if logged_in? %>
 							<a href='/my_page'>
-								<span class="img"><img src="//cdn.wimg.jp/content/no_image/profile/nu_80.gif" width='30' height='30', alt="ssdさんのプロフィール画像"></span>
+								<span class="img">
+									<% if current_user.user_image? %>
+										<%= image_tag(current_user.user_image.to_s,width: '30',height: '30', alt: "ssdさんのプロフィール画像") %>
+									<% else %>
+										<img src="//cdn.wimg.jp/content/no_image/profile/nu_80.gif" alt="ssd" width="30" height="30">
+									<% end %>
+								</span>
 								<span class="name"><%=current_user.name%></span>
 							</a>
 						<% else %>

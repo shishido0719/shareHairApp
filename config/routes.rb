@@ -8,14 +8,13 @@ Rails.application.routes.draw do
   delete '/logout',  to: 'sessions#destroy'
   get    '/user/search',   to: 'users#search'
   get    '/my_page',   to: 'users#my_page' 
-  # post    '/likes/:id',   to: 'likes#create'
+  resources :microposts
   resources :users ,only: [:index, :new, :create]
   resources :users, path: '/', only: [:show, :edit, :update, :destroy]
-  # resources :users, only: :show, param: :name
-  # resources :microposts   
   resources :microposts do
     post 'add' => 'likes#create'
     delete '/add' => 'likes#destroy'
   end
+  
 
 end
