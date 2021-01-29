@@ -11,7 +11,7 @@
 			<h1 class="logo container-element"><%= link_to image_tag("wearLogo.png",width: '135',height: '35'),'/' %></h1>
 			
 			<div class="mycontent container-element">
-				<div class="user">
+				<div v-on:mouseover="mouseOverAction" v-on:mouseleave="mouseLeaveAction" id="header_mycontent" class="user">
 					<div class="trigger">
 						<p class="clearfix">
 						<% if logged_in? %>
@@ -41,7 +41,7 @@
 	
 	<div id="gbl_header_mycontent">
 		<div class="container">
-			<div class="user">
+			<div v-show="show" v-on:mouseover="mouseOverAction" v-on:mouseleave="mouseLeaveAction" id="user_pulldown_menu" class="user">
 				<ul>
 					<li><a href="/member/">マイページ</a></li>
 					<li><a href="/member/feed/">タイムライン</a></li>
