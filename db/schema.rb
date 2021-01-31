@@ -12,18 +12,18 @@
 
 ActiveRecord::Schema.define(version: 2021_01_05_000924) do
 
-  create_table "likes", force: :cascade do |t|
-    t.integer "micropost_id"
-    t.integer "user_id"
+  create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "micropost_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["micropost_id"], name: "index_likes_on_micropost_id"
     t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
-  create_table "microposts", force: :cascade do |t|
+  create_table "microposts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "content"
-    t.integer "user_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "image"
@@ -31,19 +31,22 @@ ActiveRecord::Schema.define(version: 2021_01_05_000924) do
     t.index ["user_id"], name: "index_microposts_on_user_id"
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
+    t.string "user_id"
+    t.string "user_image"
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "age"
     t.string "region"
+    t.date "birth_day"
     t.string "sex"
     t.string "password_digest"
     t.string "remember_digest"
-    t.string "user_id"
-    t.string "user_image"
-    t.date "birth_day"
   end
 
+  add_foreign_key "likes", "microposts"
+  add_foreign_key "likes", "users"
+  add_foreign_key "microposts", "users"
 end
