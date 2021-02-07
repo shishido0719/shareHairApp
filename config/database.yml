@@ -5,7 +5,7 @@ development:
   database: share_hair_app_development
   pool: 5
   username: root
-  password:
+  password: Root@1234
   socket: /var/lib/mysql/mysql.sock
 
 # Warning: The database defined as "test" will be erased and
